@@ -1,0 +1,439 @@
+Script started on 2024-10-11 04:45:36+00:00 [TERM="linux" TTY="/dev/tty1" COLUMNS="100" LINES="37"]
+[?2004hsysadmin@burgosguerra:~$ cdcd[K[K /media/sf-[K_share[K[K[K[K[KShared
+[?2004lbash: cd: /media/sf_Shared: No such file or directory
+[?2004hsysadmin@burgosguerra:~$ sudo mkdir /mnt/shared
+[?2004l[sudo] password for sysadmin: 
+[?2004hsysadmin@burgosguerra:~$ sudo mount -t vboxsf s[KSa[Khared /mnt/S[Kshared
+[?2004l[?2004hsysadmin@burgosguerra:~$ ls /mnt/shared
+[?2004l [0m[01;32mA1Code.tgz[0m       [01;32mcreate.sh[0m                       [01;32mldap_user_management.sh[0m    [01;32mpretend.txt[0m
+ [34;42mA2Files[0m         [01;32m'davgue davgue VirtualBox.txt'[0m   [01;32mldap_user_management.txt[0m   [01;32mreport_01.txt[0m
+ [34;42mA2FilesDEFAULT[0m   [01;32mfibo.txt[0m                        [01;32mnew.txt[0m                    [01;32muserCREATE.sh[0m
+ [01;32mA2test.txt[0m       [01;32mfibonacci.cpp[0m                   [01;32mnewnew.txt[0m                 [01;32muser_create.sh[0m
+ [01;32mcode.txt[0m         [01;32mimport.txt[0m                      [01;32mpointers.cpp[0m               [01;32muser_management.sh[0m
+[?2004hsysadmin@burgosguerra:~$ nano useradd.sh
+[?2004l[?2004h)0[1;37r[m[4l[?7h[39;49m[?25l[?1c[39;49m[m[H[J[35;45H[0;10;7m[ New File ][m[H[0;10;7m  GNU nano 6.2                                 useradd.sh                                           [1;99H[m[36d[0;10;7m^G[m Help[15G[0;10;7m^O[m Write Out  [0;10;7m^W[m Where Is   [0;10;7m^K[m Cut[36;57H[0;10;7m^T[m Execute    [0;10;7m^C[m Location   [0;10;7mM-U[m Undo[37d[0;10;7m^X[m Exit[15G[0;10;7m^R[m Read File  [0;10;7m^\[m Replace    [0;10;7m^U[m Paste[57G[0;10;7m^J[m Justify    [0;10;7m^/[m Go To Line [0;10;7mM-E[m Redo[2d[?25h[?0c[?25l[?1c[35d[J[37d[?25h[?0c[37;1H[?2004l[?2004hsysadmin@burgosguerra:~$ cp/mnt/[K[K[K[K[K /mnt/shared/ldap_user_management.txt !/[K[K![K~/s[Kuseradd.sh
+[?2004l[?2004hsysadmin@burgosguerra:~$ cp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnano useradd.sh[K
+[?2004l[?2004h)0[1;37r[m[4l[?7h[39;49m[?25l[?1c[39;49m[m[H[J[35;44H[0;10;7m[ Reading... ][m[35;28H[0;10;7m[ Read 255 lines (Converted from DOS format) ][m[H[0;10;7m  GNU nano 6.2                                 useradd.sh                                           [1;99H[m[36d[0;10;7m^G[m Help[15G[0;10;7m^O[m Write Out  [0;10;7m^W[m Where Is   [0;10;7m^K[m Cut[36;57H[0;10;7m^T[m Execute    [0;10;7m^C[m Location   [0;10;7mM-U[m Undo[37d[0;10;7m^X[m Exit[15G[0;10;7m^R[m Read File  [0;10;7m^\[m Replace    [0;10;7m^U[m Paste[57G[0;10;7m^J[m Justify    [0;10;7m^/[m Go To Line [0;10;7mM-E[m Redo[2d[36m#!/bin/bash[4d# Final[6d# Set LDAP server and credentials[7d[39m[mLDAP_SERVER[32m=[0;10;1m[33m"ldap://localhost"[8d[39m[mBASE_DN[32m=[0;10;1m[33m"dc=burgosguerra,dc=com"[9d[39m[mADMIN_DN[32m=[0;10;1m[33m"cn=admin,dc=burgosguerra,dc=com"[10d[39m[mADMIN_PASSWORD[32m=[0;10;1m[33m"BurgosGuerra"[12d[0;10m[36m# Function to check if an LDAP user exists[13d[0;10;1m[32mcheck_user_exists[0;10m[32m()[39m[m [32m{[14;5Hlocal[39m[m username[32m=[0;10;1m[31m$1[15;5H[39m[mldapsearch[0;10;1m[35m -x -b[39m[m [0;10;1m[33m"$BASE_DN"[39m[m [0;10;1m[33m"(uid=$username)"[39m[m [32m|[39m[m [0;10;1m[34mgrep[35m -q[39m[m [0;10;1m[33m"dn:"[16;5H[0;10m[32mreturn[39m[m [0;10;1m[31m$?[17d[0;10m[32m}[19d[36m# Function to change the password of an existing LDAP user[20d[0;10;1m[32mchange_user_password[0;10m[32m()[39m[m [32m{[21;5Hlocal[39m[m username[32m=[0;10;1m[31m$1[22;5H[0;10m[32mlocal[39m[m new_password[32m=[0;10;1m[31m$2[23;5H[39m[mldapmodify[0;10;1m[35m -x -D[39m[m [0;10;1m[33m"$ADMIN_DN"[35m -w[39m[m [0;10;1m[33m"$ADMIN_PASSWORD"[39m[m [32m<<[39m[mEOF[24ddn[32m:[39m[m uid[32m=[0;10;1m[31m$username[39m[m,[0;10;1m[31m$BASE_DN[25d[39m[mchangetype[32m:[39m[m modify[26dreplace[32m:[39m[m userPassword[27duserPassword[32m:[39m[m [0;10;1m[31m$new_password[28d[39m[mEOF[29d [32mif[39m[m [32m[[39m[m [0;10;1m[31m$?[39m[m [32m-eq[39m[m 0 [32m];[39m[m [32mthen[30;9H[0;10;1m[34mecho[39m[m [0;10;1m[33m"Password changed successfully for user $username."[31;5H[0;10m[32melse[32d[0;10;1m[34mecho[39m[m [0;10;1m[33m"Error: Failed to change password for user $username."[33;5H[0;10m[32mfi[34d}[2d[39m[m[?25h[?0c[?25l[?1c[?25h[?0c[3d[?25l[?1c[?25h[?0c[4d[?25l[?1c[?25h[?0c[5d[?25l[?1c[?25h[?0c[6d[?25l[?1c[?25h[?0c[7d[?25l[?1c[?25h[?0c[8d[?25l[?1c[?25h[?0c[9d[?25l[?1c[?25h[?0c[10d[?25l[?1c[?25h[?0c[11d[?25l[?1c[?25h[?0c[12d[?25l[?1c[?25h[?0c[13d[?25l[?1c[?25h[?0c[14d[?25l[?1c[?25h[?0c[15d[?25l[?1c[?25h[?0c[16d[?25l[?1c[?25h[?0c[17d[?25l[?1c[?25h[?0c[18d[?25l[?1c[?25h[?0c[19d[?25l[?1c[?25h[?0c[20d[?25l[?1c[?25h[?0c[21d[?25l[?1c[35d[K[?25h[?0c[22d[?25l[?1c[?25h[?0c[23d[?25l[?1c[?25h[?0c[24d[?25l[?1c[?25h[?0c[25d[?25l[?1c[?25h[?0c[26d[?25l[?1c[?25h[?0c[27d[?25l[?1c[?25h[?0c[28d[?25l[?1c[?25h[?0c[29d[?25l[?1c[?25h[?0c[30d[?25l[?1c[?25h[?0c[31d[?25l[?1c[?25h[?0c[32d[?25l[?1c[?25h[?0c[33d[?25l[?1c[?25h[?0c[34d[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[36m# Function to check and create directories with sudo if necessary[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[0;10;1m[32mcheck_and_create_directory[0;10m[32m()[39m[m [32m{[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mlocal[39m[m dir[32m=[0;10;1m[31m$1[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mif[39m[m [32m[[39m[m [32m![0;10;1m[35m -d[39m[m [0;10;1m[33m"$dir"[39m[m [32m];[39m[m [32mthen[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[0;10;1m[34mecho[39m[m [0;10;1m[33m"Directory $dir does not exist. Creating..."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9Hsudo [0;10;1m[34mmkdir[35m -p[39m[m [0;10;1m[33m"$dir"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9Hsudo [0;10;1m[34mchown[39m[m [0;10;1m[33m"$USER"[0;10m[32m:[0;10;1m[33m"$USER"[39m[m [0;10;1m[33m"$dir"[39m[m [36m # Change ownership to the current user[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mfi[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[32m}[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[36m# Function to create user type directories if they don't exist[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[0;10;1m[32mcreate_user_type_directories[0;10m[32m()[39m[m [32m{[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mlocal[39m[m base_dir[32m=[0;10;1m[33m"/home/wildcatsUsers"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mlocal[39m[m admins_dir[32m=[0;10;1m[33m"$base_dir/admins"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mlocal[39m[m teachers_dir[32m=[0;10;1m[33m"$base_dir/teachers"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mlocal[39m[m students_dir[32m=[0;10;1m[33m"$base_dir/students"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5Hcheck_and_create_directory [0;10;1m[33m"$admins_dir"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5Hcheck_and_create_directory [0;10;1m[33m"$teachers_dir"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5Hcheck_and_create_directory [0;10;1m[33m"$students_dir"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[32m}[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[36m# Function to create a new user[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[0;10;1m[32mcreate_user[0;10m[32m()[39m[m [32m{[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mlocal[39m[m username[32m=[0;10;1m[31m$1[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mlocal[39m[m user_type[32m=[0;10;1m[31m$2[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mlocal[39m[m home_directory[32m=[0;10;1m[33m"/home/wildcatsUsers/$user_type/$username"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;4H[36m # Create user type directories if they don't exist[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5Hcreate_user_type_directories[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;4H[36m # Create the home directory[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5Hcheck_and_create_directory [0;10;1m[33m"$home_directory"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;4H[36m # Set permissions based on user type[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mcase[39m[m [0;10;1m[33m"$user_type"[39m[m [32min[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9Hadmins[32m)[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13Hsudo [0;10;1m[34mchmod[39m[m 770 [0;10;1m[33m"$home_directory"[39m[m [36m # Admins have full access[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13Hsudo usermod -aG sudo [0;10;1m[33m"$username"[39m[m [36m # Add Admins to sudo group[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H[32m;;[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9Hteachers[32m)[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13Hsudo [0;10;1m[34mchmod[39m[m 750 [0;10;1m[33m"$home_directory"[39m[m [36m # Teachers have full access to their own directory[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H[32m;;[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9Hstudents[32m)[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13Hsudo [0;10;1m[34mchmod[39m[m 700 [0;10;1m[33m"$home_directory"[39m[m [36m # Students have access only to their own home directo[39m[0;10;7m>[34;1H[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H[32m;;[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H*[32m)[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H[0;10;1m[34mecho[39m[m [0;10;1m[33m"Invalid user type: $user_type. User creation aborted."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H[32mreturn[39m[m 1[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H[32m;;[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mesac[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;4H[36m # Create the LDAP entry[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5Hldapadd[0;10;1m[35m -x -D[39m[m [0;10;1m[33m"$ADMIN_DN"[35m -w[39m[m [0;10;1m[33m"$ADMIN_PASSWORD"[39m[m [32m<<[39m[mEOF[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1Hdn[32m:[39m[m uid[32m=[0;10;1m[31m$username[39m[m,[0;10;1m[31m$BASE_DN[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1HobjectClass[32m:[39m[m inetOrgPerson[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1HobjectClass[32m:[39m[m posixAccount[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1HobjectClass[32m:[39m[m shadowAccount[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1Hcn[32m:[39m[m [0;10;1m[31m$username[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1Hsn[32m:[39m[m [0;10;1m[31m$username[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1Huid[32m:[39m[m [0;10;1m[31m$username[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1HuserPassword[32m:[39m[m default_password [36m # Temporary password[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1HhomeDirectory[32m:[39m[m [0;10;1m[31m$home_directory[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1HloginShell[32m:[39m[m /bin/bash[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1HEOF[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mif[39m[m [32m[[39m[m [0;10;1m[31m$?[39m[m [32m-eq[39m[m 0 [32m];[39m[m [32mthen[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[0;10;1m[34mecho[39m[m [0;10;1m[33m"User $username created successfully."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32melse[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[0;10;1m[34mecho[39m[m [0;10;1m[33m"Error: Failed to create user $username in LDAP."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mfi[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[32m}[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[36m# Function to validate password[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[0;10;1m[32mvalidate_password[0;10m[32m()[39m[m [32m{[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mlocal[39m[m password[32m=[0;10;1m[31m$1[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mif[39m[m [32m[[[39m[m [0;10;1m[31m${#password}[39m[m [32m-lt[39m[m 8 [32m]][39m[m [32m||[39m[m [32m![39m[m [32m[[[39m[m [0;10;1m[33m"$password"[39m[m [32m=[39m[m~ [32m[[39m[m0-9[32m][39m[m [32m]];[39m[m [32mthen[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[32mreturn[39m[m 1 [36m # Invalid password[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mfi[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mreturn[39m[m 0 [36m # Valid password[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[32m}[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[36m# Function to delete an LDAP user[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[0;10;1m[32mdelete_user[0;10m[32m()[39m[m [32m{[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mlocal[39m[m username[32m=[0;10;1m[31m$1[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mlocal[39m[m keep_home[32m=[0;10;1m[31m$2[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;4H[36m # Define possible user types and loop through them to find the correct home directory[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mlocal[39m[m user_types[32m=([0;10;1m[33m"admins"[39m[m [0;10;1m[33m"teachers"[39m[m [0;10;1m[33m"students"[0;10m[32m)[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mlocal[39m[m home_directory[32m=[0;10;1m[33m""[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mfor[39m[m user_type [32min[39m[m [0;10;1m[33m"${user_types[@]}"[0;10m[32m;[39m[m [32mdo[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[32mlocal[39m[m possible_home_directory[32m=[0;10;1m[33m"/home/wildcatsUsers/$user_type/$username"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[32mif[39m[m [32m[[0;10;1m[35m -d[39m[m [0;10;1m[33m"$possible_home_directory"[39m[m [32m];[39m[m [32mthen[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13Hhome_directory[32m=[0;10;1m[33m"$possible_home_directory"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H[32mbreak[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[32mfi[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mdone[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mif[39m[m [32m[[[0;10;1m[35m -z[39m[m [0;10;1m[33m"$home_directory"[39m[m [32m]];[39m[m [32mthen[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[0;10;1m[34mecho[39m[m [0;10;1m[33m"Could not determine user type for $username. Aborting deletion."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[32mreturn[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mfi[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mlocal[39m[m deleted_users_dir[32m=[0;10;1m[33m"/home/deletedUsers"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;4H[36m # Check and create deleted users directory[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5Hcheck_and_create_directory [0;10;1m[33m"$deleted_users_dir"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mif[39m[m [32m[[[39m[m [0;10;1m[33m"$keep_home"[39m[m [32m==[39m[m [0;10;1m[33m"yes"[39m[m [32m]];[39m[m [32mthen[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;8H[36m # Move the user's home directory to the deletedUsers directory[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[32mif[39m[m [32m[[0;10;1m[35m -d[39m[m [0;10;1m[33m"$home_directory"[39m[m [32m];[39m[m [32mthen[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13Hsudo [0;10;1m[34mmv[39m[m [0;10;1m[33m"$home_directory"[39m[m [0;10;1m[33m"$deleted_users_dir/$username"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H[0;10;1m[34mecho[39m[m [0;10;1m[33m"Moved home directory to $deleted_users_dir/$username"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[32melse[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H[0;10;1m[34mecho[39m[m [0;10;1m[33m"Home directory $home_directory does not exist."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[32mfi[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32melse[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;8H[36m # Remove the user's home directory and its contents[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[32mif[39m[m [32m[[0;10;1m[35m -d[39m[m [0;10;1m[33m"$home_directory"[39m[m [32m];[39m[m [32mthen[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13Hsudo [0;10;1m[34mrm[39m[m -rf [0;10;1m[33m"$home_directory"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H[0;10;1m[34mecho[39m[m [0;10;1m[33m"Deleted home directory at $home_directory"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[32melse[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H[0;10;1m[34mecho[39m[m [0;10;1m[33m"Home directory $home_directory does not exist."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[32mfi[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mfi[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;4H[36m # Delete the user from the LDAP directory[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5Hldapdelete[0;10;1m[35m -x -D[39m[m [0;10;1m[33m"$ADMIN_DN"[35m -w[39m[m [0;10;1m[33m"$ADMIN_PASSWORD"[39m[m [0;10;1m[33m"uid=$username,$BASE_DN"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mif[39m[m [32m[[39m[m [0;10;1m[31m$?[39m[m [32m-eq[39m[m 0 [32m];[39m[m [32mthen[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[0;10;1m[34mecho[39m[m [0;10;1m[33m"User $username deleted from LDAP."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32melse[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[0;10;1m[34mecho[39m[m [0;10;1m[33m"Error: Failed to delete user $username from LDAP."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mfi[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[32m}[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[36m# Main menu function[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[0;10;1m[32mmain_menu[0;10m[32m()[39m[m [32m{[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5Hcreate_user_type_directories [36m # Ensure directories are created at the start[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mwhile[39m[m true[32m;[39m[m [32mdo[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[0;10;1m[34mecho[39m[m [0;10;1m[33m"LDAP User Management"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[0;10;1m[34mecho[39m[m [0;10;1m[33m"1. Check if an LDAP user exists"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[0;10;1m[34mecho[39m[m [0;10;1m[33m"2. Change the password of an existing LDAP user"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[0;10;1m[34mecho[39m[m [0;10;1m[33m"3. Create a new user (admins, teachers, students)"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[0;10;1m[34mecho[39m[m [0;10;1m[33m"4. Delete a user"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[0;10;1m[34mecho[39m[m [0;10;1m[33m"5. Exit"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[32mread[0;10;1m[35m -p[39m[m [0;10;1m[33m"Select an option: "[39m[m choice[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[32mcase[39m[m [0;10;1m[31m$choice[39m[m [32min[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H1[32m)[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32mread[0;10;1m[35m -p[39m[m [0;10;1m[33m"Enter username to check: "[39m[m username[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32mif[39m[m check_user_exists [0;10;1m[33m"$username"[0;10m[32m;[39m[m [32mthen[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;21H[0;10;1m[34mecho[39m[m [0;10;1m[33m"User $username exists."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32melse[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;21H[0;10;1m[34mecho[39m[m [0;10;1m[33m"User $username does not exist."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32mfi[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32m;;[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H2[32m)[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32mread[0;10;1m[35m -p[39m[m [0;10;1m[33m"Enter username to change password: "[39m[m username[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32mif[39m[m check_user_exists [0;10;1m[33m"$username"[0;10m[32m;[39m[m [32mthen[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;21H[32mwhile[39m[m true[32m;[39m[m [32mdo[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;25H[32mread[39m[m -sp [0;10;1m[33m"Enter new password: "[39m[m new_password[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;25H[0;10;1m[34mecho[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;25H[32mif[39m[m validate_password [0;10;1m[33m"$new_password"[0;10m[32m;[39m[m [32mthen[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;29Hchange_user_password [0;10;1m[33m"$username"[39m[m [0;10;1m[33m"$new_password"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;29H[32mbreak[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;25H[32melse[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;29H[0;10;1m[34mecho[39m[m [0;10;1m[33m"Password must be at least 8 characters long and contain at least [39m[0;10;7m>[34;1H[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;25H[32mfi[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;21H[32mdone[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32melse[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;21H[0;10;1m[34mecho[39m[m [0;10;1m[33m"User $username does not exist."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32mfi[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32m;;[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H3[32m)[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32mread[0;10;1m[35m -p[39m[m [0;10;1m[33m"Enter new username: "[39m[m username[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32mif[39m[m check_user_exists [0;10;1m[33m"$username"[0;10m[32m;[39m[m [32mthen[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;21H[0;10;1m[34mecho[39m[m [0;10;1m[33m"Error: User $username already exists."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32melse[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;21H[32mread[0;10;1m[35m -p[39m[m [0;10;1m[33m"Enter user type (admins, teachers, students): "[39m[m user_type[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;21Huser_type[32m=$([0;10;1m[34mecho[39m[m [0;10;1m[33m"$user_type"[39m[m [32m|[39m[m tr [0;10;1m[33m'[:upper:]'[39m[m [0;10;1m[33m'[:lower:]'[0;10m[32m)[39m[m [36m # Convert to lower[39m[0;10;7m>[34;1H[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;21H[32mif[39m[m [32m[[[39m[m [0;10;1m[33m"$user_type"[39m[m [32m=[39m[m~ ^[32m([39m[madmins[32m|[39m[mteachers[32m|[39m[mstudents[32m)$[39m[m [32m]];[39m[m [32mthen[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;25H[32mwhile[39m[m true[32m;[39m[m [32mdo[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;29H[32mread[39m[m -sp [0;10;1m[33m"Enter a password for the new user: "[39m[m user_password[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;29H[0;10;1m[34mecho[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;29H[32mif[39m[m validate_password [0;10;1m[33m"$user_password"[0;10m[32m;[39m[m [32mthen[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;33Hcreate_user [0;10;1m[33m"$username"[39m[m [0;10;1m[33m"$user_type"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;33H[0;10;1m[34mecho[39m[m [0;10;1m[33m"User created."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;33H[32mbreak[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;29H[32melse[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;33H[0;10;1m[34mecho[39m[m [0;10;1m[33m"Password must be at least 8 characters long and contain at le[39m[0;10;7m>[34;1H[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;29H[32mfi[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;25H[32mdone[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;21H[32melse[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;25H[0;10;1m[34mecho[39m[m [0;10;1m[33m"Invalid user type."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;21H[32mfi[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32mfi[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32m;;[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H4[32m)[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32mread[0;10;1m[35m -p[39m[m [0;10;1m[33m"Enter the username to delete: "[39m[m username[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32mif[39m[m check_user_exists [0;10;1m[33m"$username"[0;10m[32m;[39m[m [32mthen[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;21H[32mread[0;10;1m[35m -p[39m[m [0;10;1m[33m"Keep home directory? (yes/no): "[39m[m keep_home[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;21Hdelete_user [0;10;1m[33m"$username"[39m[m [0;10;1m[33m"$keep_home"[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32melse[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;21H[0;10;1m[34mecho[39m[m [0;10;1m[33m"User $username does not exist."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32mfi[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32m;;[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H5[32m)[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[0;10;1m[34mecho[39m[m [0;10;1m[33m"Exiting..."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32mbreak[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32m;;[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;13H*[32m)[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[0;10;1m[34mecho[39m[m [0;10;1m[33m"Invalid option. Please try again."[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;17H[32m;;[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;9H[32mesac[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;5H[32mdone[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[32m}[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[36m# Start the script[39m[m[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1Hmain_menu[?25l[?1c[?25h[?0c7[2;35r8[35d
+[1;37r[34;1H[?25l[?1c[?25h[?0c[?25l[?1c[?25h[?0c[?25l[?1c[?25h[?0c[?25l[?1c[?25h[?0c[?25l[?1c[?25h[?0c[?25l[?1c[?25h[?0c[?25l[?1c[?25h[?0c[?25l[?1c[?25h[?0c[?25l[?1c[?25h[?0c[?25l[?1c[?25h[?0c[?25l[?1c[?25h[?0c[?25l[?1c[?25h[?0c[?25l[?1c[?25h[?0c[?25l[?1c[?25h[?0c[?25l[?1c[?25h[?0c[?25l[?1c[?25h[?0c[?25l[?1c[36d[J[37d[?25h[?0c[37;1H[?2004l[?2004hsysadmin@burgosguerra:~$ nano useradd.shcp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnano useradd.sh[K[Kd[Ksudo apt install dos2unix
+[?2004lReading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+The following NEW packages will be installed:
+  dos2unix
+0 upgraded, 1 newly installed, 0 to remove and 52 not upgraded.
+Need to get 384 kB of archives.
+After this operation, 1367 kB of additional disk space will be used.
+[33m0% [Working][0m            Get:1 http://bz.archive.ubuntu.com/ubuntu jammy/universe amd64 dos2unix amd64 7.4.2-2 [384 kB]
+[33m0% [1 dos2unix 0 B/384 kB 0%][0m[33m57% [1 dos2unix 273 kB/384 kB 71%][0m[33m                                  100% [Working][0m              Fetched 384 kB in 1s (394 kB/s)
+
+7[0;36r8[1ASelecting previously unselected package dos2unix.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 74936 files and directories currently installed.)
+Preparing to unpack .../dos2unix_7.4.2-2_amd64.deb ...
+7[37;0f[42m[30mProgress: [  0%][49m[39m [..............................................................................] 87[37;0f[42m[30mProgress: [ 20%][49m[39m [###############...............................................................] 8Unpacking dos2unix (7.4.2-2) ...
+7[37;0f[42m[30mProgress: [ 40%][49m[39m [###############################...............................................] 8Setting up dos2unix (7.4.2-2) ...
+7[37;0f[42m[30mProgress: [ 60%][49m[39m [##############################################................................] 87[37;0f[42m[30mProgress: [ 80%][49m[39m [##############################################################................] 8Processing triggers for man-db (2.10.2-1) ...
+
+7[0;37r8[1A[JScanning processes... [                                                                            ]Scanning processes... [                                                                            ]Scanning processes... [=                                                                           ]Scanning processes... [=                                                                           ]Scanning processes... [==                                                                          ]Scanning processes... [===                                                                         ]Scanning processes... [===                                                                         ]Scanning processes... [====                                                                        ]Scanning processes... [=====                                                                       ]Scanning processes... [=====                                                                       ]Scanning processes... [======                                                                      ]Scanning processes... [=======                                                                     ]Scanning processes... [=======                                                                     ]Scanning processes... [========                                                                    ]Scanning processes... [=========                                                                   ]Scanning processes... [=========                                                                   ]Scanning processes... [==========                                                                  ]Scanning processes... [===========                                                                 ]Scanning processes... [===========                                                                 ]Scanning processes... [============                                                                ]Scanning processes... [=============                                                               ]Scanning processes... [=============                                                               ]Scanning processes... [==============                                                              ]Scanning processes... [===============                                                             ]Scanning processes... [===============                                                             ]Scanning processes... [================                                                            ]Scanning processes... [=================                                                           ]Scanning processes... [=================                                                           ]Scanning processes... [==================                                                          ]Scanning processes... [===================                                                         ]Scanning processes... [===================                                                         ]Scanning processes... [====================                                                        ]Scanning processes... [====================                                                        ]Scanning processes... [=====================                                                       ]Scanning processes... [======================                                                      ]Scanning processes... [======================                                                      ]Scanning processes... [=======================                                                     ]Scanning processes... [========================                                                    ]Scanning processes... [========================                                                    ]Scanning processes... [=========================                                                   ]Scanning processes... [==========================                                                  ]Scanning processes... [==========================                                                  ]Scanning processes... [===========================                                                 ]Scanning processes... [============================                                                ]Scanning processes... [============================                                                ]Scanning processes... [=============================                                               ]Scanning processes... [==============================                                              ]Scanning processes... [==============================                                              ]Scanning processes... [===============================                                             ]Scanning processes... [================================                                            ]Scanning processes... [================================                                            ]Scanning processes... [=================================                                           ]Scanning processes... [==================================                                          ]Scanning processes... [==================================                                          ]Scanning processes... [===================================                                         ]Scanning processes... [====================================                                        ]Scanning processes... [====================================                                        ]Scanning processes... [=====================================                                       ]Scanning processes... [======================================                                      ]Scanning processes... [======================================                                      ]Scanning processes... [=======================================                                     ]Scanning processes... [=======================================                                     ]Scanning processes... [========================================                                    ]Scanning processes... [=========================================                                   ]Scanning processes... [=========================================                                   ]Scanning processes... [==========================================                                  ]Scanning processes... [===========================================                                 ]Scanning processes... [===========================================                                 ]Scanning processes... [============================================                                ]Scanning processes... [=============================================                               ]Scanning processes... [=============================================                               ]Scanning processes... [==============================================                              ]Scanning processes... [===============================================                             ]Scanning processes... [===============================================                             ]Scanning processes... [================================================                            ]Scanning processes... [=================================================                           ]Scanning processes... [=================================================                           ]Scanning processes... [==================================================                          ]Scanning processes... [===================================================                         ]Scanning processes... [===================================================                         ]Scanning processes... [====================================================                        ]Scanning processes... [=====================================================                       ]Scanning processes... [=====================================================                       ]Scanning processes... [======================================================                      ]Scanning processes... [=======================================================                     ]Scanning processes... [=======================================================                     ]Scanning processes... [========================================================                    ]Scanning processes... [=========================================================                   ]Scanning processes... [=========================================================                   ]Scanning processes... [==========================================================                  ]Scanning processes... [==========================================================                  ]Scanning processes... [===========================================================                 ]Scanning processes... [============================================================                ]Scanning processes... [============================================================                ]Scanning processes... [=============================================================               ]Scanning processes... [==============================================================              ]Scanning processes... [==============================================================              ]Scanning processes... [===============================================================             ]Scanning processes... [================================================================            ]Scanning processes... [================================================================            ]Scanning processes... [=================================================================           ]Scanning processes... [==================================================================          ]Scanning processes... [==================================================================          ]Scanning processes... [===================================================================         ]Scanning processes... [====================================================================        ]Scanning processes... [====================================================================        ]Scanning processes... [=====================================================================       ]Scanning processes... [======================================================================      ]Scanning processes... [======================================================================      ]Scanning processes... [=======================================================================     ]Scanning processes... [========================================================================    ]Scanning processes... [========================================================================    ]Scanning processes... [=========================================================================   ]Scanning processes... [==========================================================================  ]Scanning processes... [==========================================================================  ]Scanning processes... [=========================================================================== ]Scanning processes... [============================================================================]Scanning processes...                                                                               
+Scanning linux images... [                                                                         ]Scanning linux images... [========================                                                 ]Scanning linux images... [================================================                         ]Scanning linux images... [=========================================================================]Scanning linux images...                                                                            
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+[?2004hsysadmin@burgosguerra:~$ dos2unix useradd.sh
+[?2004ldos2unix: converting file useradd.sh to Unix format...
+[?2004hsysadmin@burgosguerra:~$ chmd[Kod +x useradd/sh[K[K[K.sh
+[?2004l[?2004hsysadmin@burgosguerra:~$ ./useradd.sh
+[?2004lLDAP User Management
+1. Check if an LDAP user exists
+2. Change the password of an existing LDAP user
+3. Create a new user (admins, teachers, students)
+4. Delete a user
+5. Exit
+Select an option: 3
+Enter new username: Jadmin
+Enter user type (admins, teachers, students): admins
+Enter a password for the new user: 
+Directory /home/wildcatsUsers/admins/Jadmin does not exist. Creating...
+usermod: user 'Jadmin' does not exist
+adding new entry "uid=Jadmin,dc=burgosguerra,dc=com"
+ldap_add: Object class violation (65)
+	additional info: object class 'posixAccount' requires attribute 'uidNumber'
+
+Error: Failed to create user Jadmin in LDAP.
+User created.
+LDAP User Management
+1. Check if an LDAP user exists
+2. Change the password of an existing LDAP user
+3. Create a new user (admins, teachers, students)
+4. Delete a user
+5. Exit
+Select an option: 3
+Enter new username: Jeacher
+Enter user type (admins, teachers, students): teacheres
+Invalid user type.
+LDAP User Management
+1. Check if an LDAP user exists
+2. Change the password of an existing LDAP user
+3. Create a new user (admins, teachers, students)
+4. Delete a user
+5. Exit
+Select an option: 3
+Enter new username: Janeteacher
+Enter user type (admins, teachers, students): teachers
+Enter a password for the new user: 
+Directory /home/wildcatsUsers/teachers/Janeteacher does not exist. Creating...
+adding new entry "uid=Janeteacher,dc=burgosguerra,dc=com"
+ldap_add: Object class violation (65)
+	additional info: object class 'posixAccount' requires attribute 'uidNumber'
+
+Error: Failed to create user Janeteacher in LDAP.
+User created.
+LDAP User Management
+1. Check if an LDAP user exists
+2. Change the password of an existing LDAP user
+3. Create a new user (admins, teachers, students)
+4. Delete a user
+5. Exit
+Select an option: 3
+Enter new username: Jastude
+Enter user type (admins, teachers, students): char    students
+Enter a password for the new user: 
+Directory /home/wildcatsUsers/students/Jastude does not exist. Creating...
+adding new entry "uid=Jastude,dc=burgosguerra,dc=com"
+ldap_add: Object class violation (65)
+	additional info: object class 'posixAccount' requires attribute 'uidNumber'
+
+Error: Failed to create user Jastude in LDAP.
+User created.
+LDAP User Management
+1. Check if an LDAP user exists
+2. Change the password of an existing LDAP user
+3. Create a new user (admins, teachers, students)
+4. Delete a user
+5. Exit
+Select an option: 5
+Exiting...
+[?2004hsysadmin@burgosguerra:~$ ./useradd.shchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Csudo apt install dos2unix[10Pnano useradd.shcp /mnt/shared/ldap_user_management.txt ~/useradd.sh
+[?2004l[?2004hsysadmin@burgosguerra:~$ cp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Kchmod +x useradd.sh[7P./useradd.shchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004ldos2unix: converting file useradd.sh to Unix format...
+[?2004hsysadmin@burgosguerra:~$ dos2unix useradd.shcp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Kcp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[33Pdos2unix useradd.sh[Kdos2unix useradd.shcp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Kchmod +x useradd.sh
+[?2004l[?2004hsysadmin@burgosguerra:~$ chmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[K
+[?2004lLDAP User Management
+1. Check if an LDAP user exists
+2. Change the password of an existing LDAP user
+3. Create a new user (admins, teachers, students)
+4. Delete a user
+5. Exit
+Select an option: 3
+Enter new username: Adam
+Enter user type (admins, teachers, students): admins
+Enter a password for the new user: 
+Directory /home/wildcatsUsers/admins/Adam does not exist. Creating...
+usermod: user 'Adam' does not exist
+adding new entry "uid=Adam,dc=burgosguerra,dc=com"
+
+User Adam created successfully with UID: 3002 and GID: 1001.
+User created.
+LDAP User Management
+1. Check if an LDAP user exists
+2. Change the password of an existing LDAP user
+3. Create a new user (admins, teachers, students)
+4. Delete a user
+5. Exit
+Select an option: 5
+Exiting...
+[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "dc=burgosguerra,dc=com" "(uid=2[K3002)"
+[?2004l# extended LDIF
+#
+# LDAPv3
+# base <dc=burgosguerra,dc=com> with scope subtree
+# filter: (uid=3002)
+# requesting: ALL
+#
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 1
+[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "dc=burgosguerra,dc=com" "(uid=3002)"[1P)"[1P)"[1P)"[1P)"a)"d)"m)"i)"n)"
+[?2004l# extended LDIF
+#
+# LDAPv3
+# base <dc=burgosguerra,dc=com> with scope subtree
+# filter: (uid=admin)
+# requesting: ALL
+#
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 1
+[?2004hsysadmin@burgosguerra:~$ ldapsearch 0x[K[K-x -b "dc=burgosguerra,dc=com" "(objectClass=posicA[K[KxAccount)"
+[?2004l# extended LDIF
+#
+# LDAPv3
+# base <dc=burgosguerra,dc=com> with scope subtree
+# filter: (objectClass=posixAccount)
+# requesting: ALL
+#
+
+# admin01, Admins, burgosguerra.com
+dn: uid=admin01,ou=Admins,dc=burgosguerra,dc=com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: admin01
+sn: Admin
+givenName: System
+cn: System Admin
+uidNumber: 1001
+gidNumber: 1001
+loginShell: /bin/bash
+homeDirectory: /home/wildcatsUsers/admins/admin01
+
+# teacher01, Teachers, burgosguerra.com
+dn: uid=teacher01,ou=Teachers,dc=burgosguerra,dc=com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: teacher01
+sn: Teacher
+givenName: John
+cn: John Teacher
+uidNumber: 2001
+gidNumber: 2001
+loginShell: /bin/bash
+homeDirectory: /home/wildcatsUsers/teachers/teacher01
+
+# student01, Students, burgosguerra.com
+dn: uid=student
