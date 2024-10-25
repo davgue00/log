@@ -1,1396 +1,0 @@
-Script started on 2024-10-12 23:37:57+00:00 [TERM="linux" TTY="/dev/tty1" COLUMNS="100" LINES="37"]
-[?2004hsysadmin@burgosguerra:~$ sudo -i
-[?2004l[sudo] password for sysadmin: 
-[?2004hroot@burgosguerra:~# joe ldap.c[K[K[K[K[K[K[K[K[K[Kcd et[K[K/etc/ldap
-[?2004l[?2004hroot@burgosguerra:/etc/ldap# cd
-[?2004l[?2004hroot@burgosguerra:~# cd /etc/ldap
-[?2004l[?2004hroot@burgosguerra:/etc/ldap# ls
-[?2004lldap.conf  [0m[01;34msasl2[0m  [01;34mschema[0m  [01;34mslapd.d[0m
-[?2004hroot@burgosguerra:/etc/ldap# joe ldap.conf
-[?2004lCommand 'joe' not found, but can be installed with:
-apt install joe       # version 4.6-1build2, or
-apt install joe-jupp  # version 3.1.40-1
-[?2004hroot@burgosguerra:/etc/ldap# apt install je[Koe
-[?2004lReading package lists... 0%Reading package lists... 100%Reading package lists... Done
-Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
-Reading state information... 0% Reading state information... 0%Reading state information... Done
-The following NEW packages will be installed:
-  joe
-0 upgraded, 1 newly installed, 0 to remove and 52 not upgraded.
-Need to get 509 kB of archives.
-After this operation, 2150 kB of additional disk space will be used.
-[33m0% [Working][0m            Get:1 http://bz.archive.ubuntu.com/ubuntu jammy/universe amd64 joe amd64 4.6-1build2 [509 kB]
-[33m0% [1 joe 0 B/509 kB 0%][0m[33m40% [1 joe 256 kB/509 kB 50%][0m[33m                             100% [Working][0m              Fetched 509 kB in 1s (460 kB/s)
-
-7[0;36r8[1ASelecting previously unselected package joe.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 75035 files and directories currently installed.)
-Preparing to unpack .../joe_4.6-1build2_amd64.deb ...
-7[37;0f[42m[30mProgress: [  0%][49m[39m [..............................................................................] 87[37;0f[42m[30mProgress: [ 20%][49m[39m [###############...............................................................] 8Unpacking joe (4.6-1build2) ...
-7[37;0f[42m[30mProgress: [ 40%][49m[39m [###############################...............................................] 8Setting up joe (4.6-1build2) ...
-7[37;0f[42m[30mProgress: [ 60%][49m[39m [##############################################................................] 8update-alternatives: using /usr/bin/joe to provide /usr/bin/editor (editor) in auto mode
-7[37;0f[42m[30mProgress: [ 80%][49m[39m [##############################################################................] 8Processing triggers for man-db (2.10.2-1) ...
-
-7[0;37r8[1A[JScanning processes... [                                                                            ]Scanning processes... [                                                                            ]Scanning processes... [=                                                                           ]Scanning processes... [=                                                                           ]Scanning processes... [==                                                                          ]Scanning processes... [===                                                                         ]Scanning processes... [===                                                                         ]Scanning processes... [====                                                                        ]Scanning processes... [====                                                                        ]Scanning processes... [=====                                                                       ]Scanning processes... [======                                                                      ]Scanning processes... [======                                                                      ]Scanning processes... [=======                                                                     ]Scanning processes... [=======                                                                     ]Scanning processes... [========                                                                    ]Scanning processes... [=========                                                                   ]Scanning processes... [=========                                                                   ]Scanning processes... [==========                                                                  ]Scanning processes... [===========                                                                 ]Scanning processes... [===========                                                                 ]Scanning processes... [============                                                                ]Scanning processes... [============                                                                ]Scanning processes... [=============                                                               ]Scanning processes... [==============                                                              ]Scanning processes... [==============                                                              ]Scanning processes... [===============                                                             ]Scanning processes... [===============                                                             ]Scanning processes... [================                                                            ]Scanning processes... [=================                                                           ]Scanning processes... [=================                                                           ]Scanning processes... [==================                                                          ]Scanning processes... [===================                                                         ]Scanning processes... [===================                                                         ]Scanning processes... [====================                                                        ]Scanning processes... [====================                                                        ]Scanning processes... [=====================                                                       ]Scanning processes... [======================                                                      ]Scanning processes... [======================                                                      ]Scanning processes... [=======================                                                     ]Scanning processes... [=======================                                                     ]Scanning processes... [========================                                                    ]Scanning processes... [=========================                                                   ]Scanning processes... [=========================                                                   ]Scanning processes... [==========================                                                  ]Scanning processes... [==========================                                                  ]Scanning processes... [===========================                                                 ]Scanning processes... [============================                                                ]Scanning processes... [============================                                                ]Scanning processes... [=============================                                               ]Scanning processes... [==============================                                              ]Scanning processes... [==============================                                              ]Scanning processes... [===============================                                             ]Scanning processes... [===============================                                             ]Scanning processes... [================================                                            ]Scanning processes... [=================================                                           ]Scanning processes... [=================================                                           ]Scanning processes... [==================================                                          ]Scanning processes... [==================================                                          ]Scanning processes... [===================================                                         ]Scanning processes... [====================================                                        ]Scanning processes... [====================================                                        ]Scanning processes... [=====================================                                       ]Scanning processes... [======================================                                      ]Scanning processes... [======================================                                      ]Scanning processes... [=======================================                                     ]Scanning processes... [=======================================                                     ]Scanning processes... [========================================                                    ]Scanning processes... [=========================================                                   ]Scanning processes... [=========================================                                   ]Scanning processes... [==========================================                                  ]Scanning processes... [==========================================                                  ]Scanning processes... [===========================================                                 ]Scanning processes... [============================================                                ]Scanning processes... [============================================                                ]Scanning processes... [=============================================                               ]Scanning processes... [=============================================                               ]Scanning processes... [==============================================                              ]Scanning processes... [===============================================                             ]Scanning processes... [===============================================                             ]Scanning processes... [================================================                            ]Scanning processes... [=================================================                           ]Scanning processes... [=================================================                           ]Scanning processes... [==================================================                          ]Scanning processes... [==================================================                          ]Scanning processes... [===================================================                         ]Scanning processes... [====================================================                        ]Scanning processes... [====================================================                        ]Scanning processes... [=====================================================                       ]Scanning processes... [=====================================================                       ]Scanning processes... [======================================================                      ]Scanning processes... [=======================================================                     ]Scanning processes... [=======================================================                     ]Scanning processes... [========================================================                    ]Scanning processes... [=========================================================                   ]Scanning processes... [=========================================================                   ]Scanning processes... [==========================================================                  ]Scanning processes... [==========================================================                  ]Scanning processes... [===========================================================                 ]Scanning processes... [============================================================                ]Scanning processes... [============================================================                ]Scanning processes... [=============================================================               ]Scanning processes... [=============================================================               ]Scanning processes... [==============================================================              ]Scanning processes... [===============================================================             ]Scanning processes... [===============================================================             ]Scanning processes... [================================================================            ]Scanning processes... [================================================================            ]Scanning processes... [=================================================================           ]Scanning processes... [==================================================================          ]Scanning processes... [==================================================================          ]Scanning processes... [===================================================================         ]Scanning processes... [====================================================================        ]Scanning processes... [====================================================================        ]Scanning processes... [=====================================================================       ]Scanning processes... [=====================================================================       ]Scanning processes... [======================================================================      ]Scanning processes... [=======================================================================     ]Scanning processes... [=======================================================================     ]Scanning processes... [========================================================================    ]Scanning processes... [========================================================================    ]Scanning processes... [=========================================================================   ]Scanning processes... [==========================================================================  ]Scanning processes... [==========================================================================  ]Scanning processes... [=========================================================================== ]Scanning processes... [============================================================================]Scanning processes...                                                                               
-Scanning linux images... [                                                                         ]Scanning linux images... [========================                                                 ]Scanning linux images... [================================================                         ]Scanning linux images... [=========================================================================]Scanning linux images...                                                                            
-
-Running kernel seems to be up-to-date.
-
-No services need to be restarted.
-
-No containers need to be restarted.
-
-No user sessions are running outdated binaries.
-
-No VM guests are running outdated hypervisor (qemu) binaries on this host.
-[?2004hroot@burgosguerra:/etc/ldap# apt install joe[2Pjoe ldap.conf
-[?2004l
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[H[J[?2004h[m[1;37r[H[7m    IW   ldap.conf                                                                 Row 1    Col 1   
-[m#[K
-# LDAP Defaults[K
-#[K
-[K
-# See ldap.conf(5) for details[K
-# This file should be world readable but not world writable.[K
-[K
-#BASE   dc=example,dc=com[K
-#URI    ldap://ldap.example.com ldap://ldap-provider.example.com:666[K
-[K
-#SIZELIMIT      12[K
-#TIMELIMIT      15[K
-#DEREF          never[K
-[K
-# TLS certificates (needed for GnuTLS)[K
-TLS_CACERT      /etc/ssl/certs/ca-certificates.crt[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K[7m Joe's Own Editor 4.6 (utf-8) ** Type [1mCtrl-K Q[m[7m to exit or [1mCtrl-K H[m[7m for help **[m[K[H
-[A[7m^[
-[A[2C[
-[A   [84C2[36B[m[K[3d[H[7m^[
-
-[H[2C[
-
-[H   [84C3
-
-
-[H^[
-
-
-[H[2C[
-
-
-[H   [84C4
-
-
-
-[H^[
-
-
-
-[H[2C[
-
-
-
-[H   [84C5[5B[H^[[5B[H[2C[[5B[H   [84C6[6B[H^[[6B[H[2C[[6B[H   [84C7[7B[H^[[7B[H[2C[[7B[H   [84C8[8B[H^[[8B[H[2C[[8B[H   [84C9[9B[H^[[9B[H[2C[[9B[H   [84C10[10B[m[L[1;20H[7m(Modified)[59C1[10B[m[K
-[H[7m^[[11B[H[2C[[11B[H   [85C0[10B[mB[1;97H[7m2[11;2H[m[K[1;97H[7m3[11;2H[mA[K[1;97H[7m4[11;3H[mS[K[1;97H[7m5[11;4H[mE[K[1;97H[7m9[11;5H[m    [K[1;97H[7m10[11;9H[md[K[1;98H[7m1[11;10H[mc[K[1;98H[7m2[11;11H[m=[K[1;98H[7m3[11;12H[mb[K[1;98H[7m4[11;13H[mu[K[1;98H[7m5[11;14H[mr[K[1;98H[7m6[11;15H[mg[K[1;98H[7m7[11;16H[mo[K[1;98H[7m8[11;17H[ms[K[1;98H[7m9[11;18H[mu[K[1;97H[7m20[11;19H[mg[K[1;97H[7m19[11;19H[m[K[1;98H[7m8[11;18H[m[K[1;98H[7m9[11;18H[mg[K[1;97H[7m20[11;19H[mu[K[1;98H[7m1[11;20H[me[K[1;98H[7m2[11;21H[mr[K[1;98H[7m3[11;22H[mr[K[1;98H[7m4[11;23H[ma[K[1;98H[7m5[11;24H[m,[K[1;98H[7m6[11;25H[md[K[1;98H[7m7[11;26H[mc[K[1;98H[7m8[11;27H[m=[K[1;98H[7m9[11;28H[mc[K[1;97H[7m30[11;29H[mo[K[1;98H[7m1[11;30H[mm[K
-[L[1;89H[7m1[7C1 [11B[m[KU[1;97H[7m2[12;2H[m[K[1;97H[7m3[12;2H[mR[K[1;97H[7m4[12;3H[mI[K[1;97H[7m5[12;4H[m [K[1;97H[7m4[12;4H[m[K[1;97H[7m9[12;4H[m [4C[K[1;97H[7m10[12;9H[ml[K[1;98H[7m1[12;10H[md[K[1;98H[7m2[12;11H[ma[K[1;98H[7m3[12;12H[mp[K[1;98H[7m4[12;13H[m:[K[1;98H[7m5[12;14H[m?[K[1;98H[7m6[12;15H[m/[K[1;98H[7m5[12;15H[m[K[1;98H[7m4[12;14H[m[K[1;98H[7m5[12;14H[m/[K[1;98H[7m6[12;15H[m/[K[1;98H[7m7[12;16H[m1[K[1;98H[7m8[12;17H[m9[K[1;98H[7m9[12;18H[m2[K[1;97H[7m20[12;19H[m.[K[1;98H[7m1[12;20H[m1[K[1;98H[7m2[12;21H[m6[K[1;98H[7m3[12;22H[m8[K[1;98H[7m4[12;23H[m.[K[1;98H[7m5[12;24H[m0[K[1;98H[7m6[12;25H[m.[K[1;98H[7m7[12;26H[m1[K[1;98H[7m8[12;27H[m8[K[H[7m^K[12;28H[m[25B[?2004l
-File ldap.conf saved
-[?2004hroot@burgosguerra:/etc/ldap# ldapsearch -x -H ldap://192/[K.168.0.18 -b "dc=burgs[Kosguerra,dc=com"
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <dc=burgosguerra,dc=com> with scope subtree
-# filter: (objectclass=*)
-# requesting: ALL
-#
-
-# burgosguerra.com
-dn: dc=burgosguerra,dc=com
-objectClass: top
-objectClass: dcObject
-objectClass: organization
-o: burgosguerra
-dc: burgosguerra
-
-# Admins, burgosguerra.com
-dn: ou=Admins,dc=burgosguerra,dc=com
-objectClass: organizationalUnit
-ou: Admins
-
-# Teachers, burgosguerra.com
-dn: ou=Teachers,dc=burgosguerra,dc=com
-objectClass: organizationalUnit
-ou: Teachers
-
-# Students, burgosguerra.com
-dn: ou=Students,dc=burgosguerra,dc=com
-objectClass: organizationalUnit
-ou: Students
-
-# admin01, Admins, burgosguerra.com
-dn: uid=admin01,ou=Admins,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: admin01
-sn: Admin
-givenName: System
-cn: System Admin
-uidNumber: 1001
-gidNumber: 1001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsers/admins/admin01
-
-# teacher01, Teachers, burgosguerra.com
-dn: uid=teacher01,ou=Teachers,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: teacher01
-sn: Teacher
-givenName: John
-cn: John Teacher
-uidNumber: 2001
-gidNumber: 2001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsers/teachers/teacher01
-
-# student01, Students, burgosguerra.com
-dn: uid=student01,ou=Students,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: student01
-sn: Student
-givenName: Jane
-cn: Jane Student
-uidNumber: 3001
-gidNumber: 3001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsrs/students/student01
-
-# Adam, burgosguerra.com
-dn: uid=Adam,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Adam
-sn: Adam
-uid: Adam
-uidNumber: 3002
-gidNumber: 1001
-homeDirectory: /home/wildcatsUsers/admins/Adam
-loginShell: /bin/bash
-
-# Luis, burgosguerra.com
-dn: uid=Luis,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Luis
-sn: Luis
-uid: Luis
-uidNumber: 3003
-gidNumber: 3001
-homeDirectory: /home/wildcatsUsers/students/Luis
-loginShell: /bin/bash
-
-# Ubuntu, burgosguerra.com
-dn: uid=Ubuntu,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Ubuntu
-sn: Ubuntu
-uid: Ubuntu
-uidNumber: 3004
-gidNumber: 2001
-homeDirectory: /home/wildcatsUsers/teachers/Ubuntu
-loginShell: /bin/bash
-
-# Joe, burgosguerra.com
-dn: uid=Joe,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Joe
-sn: Joe
-uid: Joe
-uidNumber: 3005
-gidNumber: 3001
-homeDirectory: /home/wildcatsUsers/students/Joe
-loginShell: /bin/bash
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 12
-# numEntries: 11
-[?2004hroot@burgosguerra:/etc/ldap# touch[K[K[K[K[Kcd
-[?2004l[?2004hroot@burgosguerra:~# touch mydb.ldif
-[?2004l[?2004hroot@burgosguerra:~# joe mydb.ldif
-[?2004l
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[H[J[?2004h[m[1;37r[H[7m    IW   mydb.ldif                                                                 Row 1    Col 1   
-[m[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K[7m Joe's Own Editor 4.6 (utf-8) ** Type [1mCtrl-K Q[m[7m to exit or [1mCtrl-K H[m[7m for help **[m[K[H
-d[1;20H[7m(Modified)[67C2
-[C[m[K[35B[K[H
-[Cn[1;97H[7m3
-[2C[m[K:[1;97H[7m4
-[3C[m[K [1;97H[7m5[5G
-[m[Ko[1;97H[7m6[6G
-[m[Ku[1;97H[7m7[7G
-[m[K_[1;97H[7m8[8G
-[m[K[1;97H[7m7[7G
-[m[K=[1;97H[7m8[8G
-[m[KP[1;97H[7m9[9G
-[m[Ke[1;97H[7m10
-[89D[m[Ko[1;98H[7m1
-[88D[m[Kp[1;98H[7m2
-[87D[m[Kl[1;98H[7m3
-[86D[m[Ke[1;98H[7m4
-[85D[m[K,[1;98H[7m5
-[84D[m[Kd[1;98H[7m6
-[83D[m[Kc[1;98H[7m7
-[82D[m[K=[1;98H[7m8
-[81D[m[Kb[1;98H[7m9
-[80D[m[Ku[1;97H[7m20
-[79D[m[Kr[1;98H[7m1
-[78D[m[Kg[1;98H[7m2
-[77D[m[Ko[1;98H[7m3
-[76D[m[Ks[1;98H[7m4
-[75D[m[Kg[1;98H[7m5
-[74D[m[Ku[1;98H[7m6
-[73D[m[Ke[1;98H[7m7
-[72D[m[Kr[1;98H[7m8
-[71D[m[Kr[1;98H[7m9
-[70D[m[Ka[1;97H[7m30
-[69D[m[K,[1;98H[7m1
-[68D[m[Kd[1;98H[7m2
-[67D[m[Kc[1;98H[7m3
-[66D[m[K=[1;98H[7m4
-[65D[m[Kc[1;98H[7m5
-[64D[m[Ko[1;98H[7m6
-[63D[m[Km[1;98H[7m7
-[62D[m[K[1;88H[7m2[8C1 
-
-[mo[1;97H[7m2
-
-[C[m[Kb[1;97H[7m3
-
-[2C[m[Kj[1;97H[7m4[3;4H[m[Ke[1;97H[7m5[3;5H[m[Kc[1;97H[7m6[3;6H[m[Kt[1;97H[7m7[3;7H[m[KC[1;97H[7m8[3;8H[m[Kl[1;97H[7m9[3;9H[m[Ka[1;97H[7m10
-
-[89D[m[Ks[1;98H[7m1
-
-[88D[m[Ks[1;98H[7m2
-
-[87D[m[K:[1;98H[7m3
-
-[86D[m[K [1;98H[7m4
-
-[85D[m[Ko[1;98H[7m5
-
-[84D[m[Kr[1;98H[7m6
-
-[83D[m[Kg[1;98H[7m7
-
-[82D[m[Ka[1;98H[7m8
-
-[81D[m[Kn[1;98H[7m9
-
-[80D[m[Ki[1;97H[7m20
-
-[79D[m[Kz[1;98H[7m1
-
-[78D[m[Ka[1;98H[7m2
-
-[77D[m[Kt[1;98H[7m3
-
-[76D[m[Ki[1;98H[7m4
-
-[75D[m[Ko[1;98H[7m5
-
-[74D[m[Kn[1;98H[7m6
-
-[73D[m[Ka[1;98H[7m7
-
-[72D[m[Kl[1;98H[7m8
-
-[71D[m[KU[1;98H[7m9
-
-[70D[m[Kn[1;97H[7m30
-
-[69D[m[Ki[1;98H[7m1
-
-[68D[m[Kt[1;98H[7m2
-
-[67D[m[K[1;88H[7m3[8C1 
-
-
-[mo[1;97H[7m2
-
-
-[C[m[Ku[1;97H[7m3[4;3H[m[K:[1;97H[7m4[4;4H[m[K [1;97H[7m5[4;5H[m[KP[1;97H[7m6[4;6H[m[Ke[1;97H[7m7[4;7H[m[Ko[1;97H[7m8[4;8H[m[Kp[1;97H[7m9[4;9H[m[Kl[1;97H[7m10[4;10H[m[Ke[1;98H[7m1[4;11H[m[K[1;88H[7m4[9C 
-
-
-
-[md[1;97H[7m2[5;2H[m[Kn[1;97H[7m3[5;3H[m[K:[1;97H[7m4[5;4H[m[K [1;97H[7m5[5;5H[m[Ko[1;97H[7m6[5;6H[m[Ku[1;97H[7m7[5;7H[m[K=[1;97H[7m8[5;8H[m[KG[1;97H[7m9[5;9H[m[Kr[1;97H[7m10[5;10H[m[Ko[1;98H[7m1[5;11H[m[Ku[1;98H[7m2[5;12H[m[Kp[1;98H[7m3[5;13H[m[Ks[1;98H[7m4[5;14H[m[K[1;98H[7m3[5;13H[m[K[1;98H[7m2[5;12H[m[K[1;98H[7m1[5;11H[m[K[1;98H[7m0[5;10H[m[K[1;97H[7m9 [5;9H[m[K[1;97H[7m8[5;8H[m[K[1;97H[7m7[5;7H[m[K[1;97H[7m6[5;6H[m[K[1;97H[7m5[5;5H[m[K[1;97H[7m4[5;4H[m[K[1;97H[7m3[5;3H[m[K[1;97H[7m2[5;2H[m[K[1;97H[7m1
-
-
-
-[m[K[L[1;88H[7m5
-
-
-
-[m[K
-d[1;97H[7m2[6;2H[m[Kn[1;97H[7m3[6;3H[m[K:[1;97H[7m4[6;4H[m[K [1;97H[7m5[6;5H[m[Ko[1;97H[7m6[6;6H[m[Ku[1;97H[7m7[6;7H[m[K:[1;97H[7m8[6;8H[m[K [1;97H[7m9[6;9H[m[KG[1;97H[7m10[6;10H[m[Kr[1;98H[7m1[6;11H[m[Ko[1;98H[7m2[6;12H[m[Ku[1;98H[7m3[6;13H[m[Kp[1;98H[7m4[6;14H[m[Ks[1;98H[7m5[6;15H[m[K[1;98H[7m4[6;14H[m[K[1;98H[7m3[6;13H[m[K[1;98H[7m2[6;12H[m[K[1;98H[7m1[6;11H[m[K[1;98H[7m0[6;10H[m[K[1;97H[7m9 [6;9H[m[K[1;97H[7m8[6;8H[m[K[1;97H[7m7[6;7H[m[K=[1;97H[7m8[6;8H[m[KG[1;97H[7m9[6;9H[m[Kr[1;97H[7m10[6;10H[m[Ko[1;98H[7m1[6;11H[m[Ku[1;98H[7m2[6;12H[m[Kp[1;98H[7m3[6;13H[m[Ks[1;98H[7m4[6;14H[m[K,[1;98H[7m5[6;15H[m[Kd[1;98H[7m6[6;16H[m[Kc[1;98H[7m7[6;17H[m[K=[1;98H[7m8[6;18H[m[Kb[1;98H[7m9[6;19H[m[Ku[1;97H[7m20[6;20H[m[Kr[1;98H[7m1[6;21H[m[Kg[1;98H[7m2[6;22H[m[Ko[1;98H[7m3[6;23H[m[Ks[1;98H[7m4[6;24H[m[Kg[1;98H[7m5[6;25H[m[Ku[1;98H[7m6[6;26H[m[Ke[1;98H[7m7[6;27H[m[Kr[1;98H[7m8[6;28H[m[Kr[1;98H[7m9[6;29H[m[Ka[1;97H[7m30[6;30H[m[K,[1;98H[7m1[6;31H[m[Kd[1;98H[7m2[6;32H[m[Kc[1;98H[7m3[6;33H[m[K-[1;98H[7m4[6;34H[m[K[1;98H[7m3[6;33H[m[K=[1;98H[7m4[6;34H[m[Kc[1;98H[7m5[6;35H[m[Ko[1;98H[7m6[6;36H[m[Km[1;98H[7m7[6;37H[m[K[1;88H[7m6[8C1 [6B[mo[1;97H[7m2[7;2H[m[Kb[1;97H[7m3[7;3H[m[Kj[1;97H[7m4[7;4H[m[Ke[1;97H[7m5[7;5H[m[Kc[1;97H[7m6[7;6H[m[Kt[1;97H[7m7[7;7H[m[KC[1;97H[7m8[7;8H[m[Kl[1;97H[7m9[7;9H[m[Ka[1;97H[7m10[7;10H[m[Ks[1;98H[7m1[7;11H[m[Ks[1;98H[7m2[7;12H[m[K:[1;98H[7m3[7;13H[m[Ko[1;98H[7m4[7;14H[m[K[1;98H[7m3[7;13H[m[K [1;98H[7m4[7;14H[m[Ko[1;98H[7m5[7;15H[m[Kr[1;98H[7m6[7;16H[m[Kg[1;98H[7m7[7;17H[m[Ka[1;98H[7m8[7;18H[m[Kn[1;98H[7m9[7;19H[m[Ki[1;97H[7m20[7;20H[m[Kz[1;98H[7m1[7;21H[m[Ka[1;98H[7m2[7;22H[m[Kt[1;98H[7m3[7;23H[m[Ki[1;98H[7m4[7;24H[m[Ko[1;98H[7m5[7;25H[m[Kn[1;98H[7m6[7;26H[m[Ka[1;98H[7m7[7;27H[m[Kl[1;98H[7m8[7;28H[m[KU[1;98H[7m9[7;29H[m[Kn[1;97H[7m30[7;30H[m[Ki[1;98H[7m1[7;31H[m[Kt[1;98H[7m2[7;32H[m[K[1;88H[7m7[8C1 [7B[mo[1;97H[7m2[8;2H[m[Ku[1;97H[7m3[8;3H[m[K:[1;97H[7m4[8;4H[m[KG[1;97H[7m5[8;5H[m[Kr[1;97H[7m6[8;6H[m[Ko[1;97H[7m7[8;7H[m[Ku[1;97H[7m8[8;8H[m[Kp[1;97H[7m9[8;9H[m[Ks[1;97H[7m10[8;10H[m[K[1;88H[7m8[9C [8B[m[L[1;88H[7m9[8B[m[K
-d[1;97H[7m2[9B[C[m[Kn[1;97H[7m3[10;3H[m[K:[1;97H[7m4[10;4H[m[K [1;97H[7m5[10;5H[m[Kc[1;97H[7m6[10;6H[m[Kn[1;97H[7m7[10;7H[m[K=[1;97H[7m8[10;8H[m[K[1;97H[7m7[10;7H[m[K=[1;97H[7m8[10;8H[m[Ka[1;97H[7m9[10;9H[m[Kd[1;97H[7m10[10;10H[m[Km[1;98H[7m1[10;11H[m[Ki[1;98H[7m2[10;12H[m[Kn[1;98H[7m3[10;13H[m[Ks[1;98H[7m4[10;14H[m[K,[1;98H[7m5[10;15H[m[Ko[1;98H[7m6[10;16H[m[Ku[1;98H[7m7[10;17H[m[K+[1;98H[7m8[10;18H[m[KG[1;98H[7m9[10;19H[m[Kr[1;97H[7m20[10;20H[m[Ko[1;98H[7m1[10;21H[m[Ku[1;98H[7m2[10;22H[m[Kp[1;98H[7m3[10;23H[m[K[1;98H[7m2[10;22H[m[K[1;98H[7m1[10;21H[m[K[1;98H[7m0[10;20H[m[K[1;97H[7m19[10;19H[m[K[1;98H[7m8[10;18H[m[K[1;98H[7m7[10;17H[m[K=[1;98H[7m8[10;18H[m[Kg[1;98H[7m9[10;19H[m[Kr[1;97H[7m20[10;20H[m[K[1;97H[7m19[10;19H[m[K[1;98H[7m8[10;18H[m[KG[1;98H[7m9[10;19H[m[Kr[1;97H[7m20[10;20H[m[Ko[1;98H[7m1[10;21H[m[Ku[1;98H[7m2[10;22H[m[Kp[1;98H[7m3[10;23H[m[Ks[1;98H[7m4[10;24H[m[K,[1;98H[7m5[10;25H[m[Kd[1;98H[7m6[10;26H[m[Kc[1;98H[7m7[10;27H[m[K=[1;98H[7m8[10;28H[m[Kb[1;98H[7m9[10;29H[m[Ku[1;97H[7m30[10;30H[m[Kr[1;98H[7m1[10;31H[m[Kg[1;98H[7m2[10;32H[m[Ko[1;98H[7m3[10;33H[m[Ks[1;98H[7m4[10;34H[m[Kg[1;98H[7m5[10;35H[m[Ku[1;98H[7m6[10;36H[m[Ke[1;98H[7m7[10;37H[m[Kr[1;98H[7m8[10;38H[m[Kr[1;98H[7m9[10;39H[m[Ka[1;97H[7m40[10;40H[m[K,[1;98H[7m1[10;41H[m[Kd[1;98H[7m2[10;42H[m[Kc[1;98H[7m3[10;43H[m[K=[1;98H[7m4[10;44H[m[Kc[1;98H[7m5[10;45H[m[Ko[1;98H[7m6[10;46H[m[Km[1;98H[7m7[10;47H[m[K[1;88H[7m10[7C1 [10B[mo[1;97H[7m2[11;2H[m[Kb[1;97H[7m3[11;3H[m[Kj[1;97H[7m4[11;4H[m[Ke[1;97H[7m5[11;5H[m[Kc[1;97H[7m6[11;6H[m[Kt[1;97H[7m7[11;7H[m[KC[1;97H[7m8[11;8H[m[Kl[1;97H[7m9[11;9H[m[Ka[1;97H[7m10[11;10H[m[Ks[1;98H[7m1[11;11H[m[Ks[1;98H[7m2[11;12H[m[K:[1;98H[7m3[11;13H[m[K [1;98H[7m4[11;14H[m[Kp[1;98H[7m5[11;15H[m[Ks[1;98H[7m6[11;16H[m[K[1;98H[7m5[11;15H[m[Ko[1;98H[7m6[11;16H[m[Ks[1;98H[7m7[11;17H[m[Ki[1;98H[7m8[11;18H[m[Kc[1;98H[7m9[11;19H[m[K[1;98H[7m8[11;18H[m[Kx[1;98H[7m9[11;19H[m[KG[1;97H[7m20[11;20H[m[Kr[1;98H[7m1[11;21H[m[Ko[1;98H[7m2[11;22H[m[Ku[1;98H[7m3[11;23H[m[Kp[1;98H[7m4[11;24H[m[K[1;89H[7m1[7C1 [11B[mc[1;97H[7m2[12;2H[m[Kn[1;97H[7m3[12;3H[m[K:[1;97H[7m4[12;4H[m[K [1;97H[7m5[12;5H[m[Ka[1;97H[7m6[12;6H[m[Kd[1;97H[7m7[12;7H[m[Km[1;97H[7m8[12;8H[m[Ki[1;97H[7m9[12;9H[m[Kn[1;97H[7m10[12;10H[m[Ks[1;98H[7m1[12;11H[m[K[1;89H[7m2[8C [12B[mg[1;97H[7m2[13;2H[m[Ki[1;97H[7m3[13;3H[m[Kd[1;97H[7m4[13;4H[m[KN[1;97H[7m5[13;5H[m[Ku[1;97H[7m6[13;6H[m[Km[1;97H[7m7[13;7H[m[Kb[1;97H[7m8[13;8H[m[Ke[1;97H[7m9[13;9H[m[Kr[1;97H[7m10[13;10H[m[K:[1;98H[7m1[13;11H[m[K [1;98H[7m2[13;12H[m[K5[1;98H[7m3[13;13H[m[K0[1;98H[7m4[13;14H[m[K0[1;98H[7m5[13;15H[m[K0[1;98H[7m6[13;16H[m[K[1;89H[7m3[8C [13B[m[L[1;89H[7m4[13B[m[K
-d[1;97H[7m2[15;2H[m[Kn[1;97H[7m3[15;3H[m[K:[1;97H[7m4[15;4H[m[K [1;97H[7m5[15;5H[m[Ks[1;97H[7m6[15;6H[m[Kc[1;97H[7m7[15;7H[m[K[1;97H[7m6[15;6H[m[K[1;97H[7m5[15;5H[m[Ks[1;97H[7m6[15;6H[m[Kn[1;97H[7m7[15;7H[m[K[1;97H[7m6[15;6H[m[K[1;97H[7m5[15;5H[m[K[1;97H[7m4[15;4H[m[Kc[1;97H[7m5[15;5H[m[Kn[1;97H[7m6[15;6H[m[K[1;97H[7m5[15;5H[m[K[1;97H[7m4[15;4H[m[K [1;97H[7m5[15;5H[m[Kc[1;97H[7m6[15;6H[m[Kn[1;97H[7m7[15;7H[m[K=[1;97H[7m8[15;8H[m[Kt[1;97H[7m9[15;9H[m[Ka[1;97H[7m10[15;10H[m[Ke[1;98H[7m1[15;11H[m[Ke[1;98H[7m2[15;12H[m[Kc[1;98H[7m3[15;13H[m[K[1;98H[7m2[15;12H[m[K[1;98H[7m1[15;11H[m[K[1;98H[7m0[15;10H[m[Ke[1;98H[7m1[15;11H[m[K[1;98H[7m0[15;10H[m[K[1;97H[7m9 [15;9H[m[Ke[1;97H[7m10[15;10H[m[Ka[1;98H[7m1[15;11H[m[Kc[1;98H[7m2[15;12H[m[Ke[1;98H[7m3[15;13H[m[K[1;98H[7m2[15;12H[m[Kh[1;98H[7m3[15;13H[m[Ke[1;98H[7m4[15;14H[m[K[1;98H[7m3[15;13H[m[Ke[1;98H[7m4[15;14H[m[Kr[1;98H[7m5[15;15H[m[Ks[1;98H[7m6[15;16H[m[K,[1;98H[7m7[15;17H[m[Ko[1;98H[7m8[15;18H[m[Ku[1;98H[7m9[15;19H[m[K:[1;97H[7m20[15;20H[m[KG[1;98H[7m1[15;21H[m[Kr[1;98H[7m2[15;22H[m[Ko[1;98H[7m3[15;23H[m[K[1;98H[7m2[15;22H[m[K[1;98H[7m1[15;21H[m[K[1;98H[7m0[15;20H[m[K[1;97H[7m19[15;19H[m[K=[1;97H[7m20[15;20H[m[KG[1;98H[7m1[15;21H[m[Kr[1;98H[7m2[15;22H[m[Ko[1;98H[7m3[15;23H[m[Ku[1;98H[7m4[15;24H[m[Kp[1;98H[7m5[15;25H[m[Ks[1;98H[7m6[15;26H[m[K [1;98H[7m7[15;27H[m[K[1;98H[7m6[15;26H[m[K,[1;98H[7m7[15;27H[m[K [1;98H[7m8[15;28H[m[Kd[1;98H[7m9[15;29H[m[Kc[1;97H[7m30[15;30H[m[K[1;97H[7m29[15;29H[m[K[1;98H[7m8[15;28H[m[K[1;98H[7m7[15;27H[m[Kd[1;98H[7m8[15;28H[m[Kc[1;98H[7m9[15;29H[m[K=[1;97H[7m30[15;30H[m[Kb[1;98H[7m1[15;31H[m[Ku[1;98H[7m2[15;32H[m[Kr[1;98H[7m3[15;33H[m[Kg[1;98H[7m4[15;34H[m[Ko[1;98H[7m5[15;35H[m[Ks[1;98H[7m6[15;36H[m[Kg[1;98H[7m7[15;37H[m[Ku[1;98H[7m8[15;38H[m[Ke[1;98H[7m9[15;39H[m[Kr[1;97H[7m40[15;40H[m[Kr[1;98H[7m1[15;41H[m[Ka[1;98H[7m2[15;42H[m[K,[1;98H[7m3[15;43H[m[Kd[1;98H[7m4[15;44H[m[Kc[1;98H[7m5[15;45H[m[K=[1;98H[7m6[15;46H[m[Kc[1;98H[7m7[15;47H[m[Ko[1;98H[7m8[15;48H[m[Km[1;98H[7m9[15;49H[m[K[1;89H[7m5[7C1 [15B[mo[1;97H[7m2[16;2H[m[Kb[1;97H[7m3[16;3H[m[Kj[1;97H[7m4[16;4H[m[Ke[1;97H[7m5[16;5H[m[Kc[1;97H[7m6[16;6H[m[Kt[1;97H[7m7[16;7H[m[KC[1;97H[7m8[16;8H[m[Kl[1;97H[7m9[16;9H[m[Ka[1;97H[7m10[16;10H[m[Ks[1;98H[7m1[16;11H[m[Ks[1;98H[7m2[16;12H[m[K:[1;98H[7m3[16;13H[m[K [1;98H[7m4[16;14H[m[Kp[1;98H[7m5[16;15H[m[Ko[1;98H[7m6[16;16H[m[Ks[1;98H[7m7[16;17H[m[Ki[1;98H[7m8[16;18H[m[Kc[1;98H[7m9[16;19H[m[K[1;98H[7m8[16;18H[m[Kx[1;98H[7m9[16;19H[m[KG[1;97H[7m20[16;20H[m[Kr[1;98H[7m1[16;21H[m[Ko[1;98H[7m2[16;22H[m[Ku[1;98H[7m3[16;23H[m[Kp[1;98H[7m4[16;24H[m[K[1;89H[7m6[7C1 [16B[mc[1;97H[7m2[17;2H[m[Kn[1;97H[7m3[17;3H[m[K.[1;97H[7m4[17;4H[m[K[1;97H[7m3[17;3H[m[K:[1;97H[7m4[17;4H[m[K [1;97H[7m5[17;5H[m[Kt[1;97H[7m6[17;6H[m[Ke[1;97H[7m7[17;7H[m[Ka[1;97H[7m8[17;8H[m[Kc[1;97H[7m9[17;9H[m[Kh[1;97H[7m10[17;10H[m[Ke[1;98H[7m1[17;11H[m[Kr[1;98H[7m2[17;12H[m[Ks[1;98H[7m3[17;13H[m[K[1;89H[7m7[8C [17B[mg[1;97H[7m2[18;2H[m[Ki[1;97H[7m3[18;3H[m[Kd[1;97H[7m4[18;4H[m[KN[1;97H[7m5[18;5H[m[Ku[1;97H[7m6[18;6H[m[Km[1;97H[7m7[18;7H[m[Kb[1;97H[7m8[18;8H[m[Ke[1;97H[7m9[18;9H[m[Kr[1;97H[7m10[18;10H[m[K:[1;98H[7m1[18;11H[m[K [1;98H[7m2[18;12H[m[K5[1;98H[7m3[18;13H[m[K0[1;98H[7m4[18;14H[m[K0[1;98H[7m5[18;15H[m[K1[1;98H[7m6[18;16H[m[K[1;89H[7m8[8C [18B[m[L[1;89H[7m9[18B[m[K
-d[1;97H[7m2[20;2H[m[Kn[1;97H[7m3[20;3H[m[K:[1;97H[7m4[20;4H[m[K [1;97H[7m5[20;5H[m[Kc[1;97H[7m6[20;6H[m[Kn[1;97H[7m7[20;7H[m[K+[1;97H[7m8[20;8H[m[K[1;97H[7m7[20;7H[m[K=[1;97H[7m8[20;8H[m[Ks[1;97H[7m9[20;9H[m[Kt[1;97H[7m10[20;10H[m[Ku[1;98H[7m1[20;11H[m[Kd[1;98H[7m2[20;12H[m[Ke[1;98H[7m3[20;13H[m[Kn[1;98H[7m4[20;14H[m[Kt[1;98H[7m5[20;15H[m[Ks[1;98H[7m6[20;16H[m[K,[1;98H[7m7[20;17H[m[Ko[1;98H[7m8[20;18H[m[Ku[1;98H[7m9[20;19H[m[K+[1;97H[7m20[20;20H[m[K[1;97H[7m19[20;19H[m[K=[1;97H[7m20[20;20H[m[KG[1;98H[7m1[20;21H[m[Kr[1;98H[7m2[20;22H[m[Ko[1;98H[7m3[20;23H[m[Ku[1;98H[7m4[20;24H[m[Kp[1;98H[7m5[20;25H[m[Ks[1;98H[7m6[20;26H[m[K,[1;98H[7m7[20;27H[m[Kd[1;98H[7m8[20;28H[m[Kc[1;98H[7m9[20;29H[m[K=[1;97H[7m30[20;30H[m[Kb[1;98H[7m1[20;31H[m[Ku[1;98H[7m2[20;32H[m[Kr[1;98H[7m3[20;33H[m[Kg[1;98H[7m4[20;34H[m[Ko[1;98H[7m5[20;35H[m[Ks[1;98H[7m6[20;36H[m[Kg[1;98H[7m7[20;37H[m[Ku[1;98H[7m8[20;38H[m[Ke[1;98H[7m9[20;39H[m[Kr[1;97H[7m40[20;40H[m[Kr[1;98H[7m1[20;41H[m[Ka[1;98H[7m2[20;42H[m[K,[1;98H[7m3[20;43H[m[Kd[1;98H[7m4[20;44H[m[Kc[1;98H[7m5[20;45H[m[K=[1;98H[7m6[20;46H[m[Kc[1;98H[7m7[20;47H[m[Ko[1;98H[7m8[20;48H[m[Km[1;98H[7m9[20;49H[m[K[1;88H[7m20[7C1 [20B[mo[1;97H[7m2[21;2H[m[Kb[1;97H[7m3[21;3H[m[Kj[1;97H[7m4[21;4H[m[Ke[1;97H[7m5[21;5H[m[Kc[1;97H[7m6[21;6H[m[Kt[1;97H[7m7[21;7H[m[KC[1;97H[7m8[21;8H[m[Kl[1;97H[7m9[21;9H[m[Ka[1;97H[7m10[21;10H[m[Ks[1;98H[7m1[21;11H[m[Ks[1;98H[7m2[21;12H[m[K:[1;98H[7m3[21;13H[m[K [1;98H[7m4[21;14H[m[Kp[1;98H[7m5[21;15H[m[Ko[1;98H[7m6[21;16H[m[Ks[1;98H[7m7[21;17H[m[Ki[1;98H[7m8[21;18H[m[Kc[1;98H[7m9[21;19H[m[K[1;98H[7m8[21;18H[m[Kx[1;98H[7m9[21;19H[m[K [1;97H[7m20[21;20H[m[K[1;97H[7m19[21;19H[m[KG[1;97H[7m20[21;20H[m[Kr[1;98H[7m1[21;21H[m[Ko[1;98H[7m2[21;22H[m[Ku[1;98H[7m3[21;23H[m[Kp[1;98H[7m4[21;24H[m[K[1;89H[7m1[7C1 [21B[mc[1;97H[7m2[22;2H[m[Kn[1;97H[7m3[22;3H[m[K:[1;97H[7m4[22;4H[m[K [1;97H[7m5[22;5H[m[Ks[1;97H[7m6[22;6H[m[Ku[1;97H[7m7[22;7H[m[Kt[1;97H[7m8[22;8H[m[K[1;97H[7m7[22;7H[m[K[1;97H[7m6[22;6H[m[Kt[1;97H[7m7[22;7H[m[Ku[1;97H[7m8[22;8H[m[Kd[1;97H[7m9[22;9H[m[Ke[1;97H[7m10[22;10H[m[Kn[1;98H[7m1[22;11H[m[Kt[1;98H[7m2[22;12H[m[Ks[1;98H[7m3[22;13H[m[K[1;89H[7m2[8C [22B[mg[1;97H[7m2[23;2H[m[Ki[1;97H[7m3[23;3H[m[Kd[1;97H[7m4[23;4H[m[KN[1;97H[7m5[23;5H[m[KU[1;97H[7m6[23;6H[m[Km[1;97H[7m7[23;7H[m[Kb[1;97H[7m8[23;8H[m[Ke[1;97H[7m9[23;9H[m[Kr[1;97H[7m10[23;10H[m[K[1;97H[7m9 [23;9H[m[K[1;97H[7m8[23;8H[m[K[1;97H[7m7[23;7H[m[K[1;97H[7m6[23;6H[m[K[1;97H[7m5[23;5H[m[Ku[1;97H[7m6[23;6H[m[Km[1;97H[7m7[23;7H[m[Kb[1;97H[7m8[23;8H[m[Ke[1;97H[7m9[23;9H[m[Kr[1;97H[7m10[23;10H[m[K:[1;98H[7m1[23;11H[m[K [1;98H[7m2[23;12H[m[K5[1;98H[7m3[23;13H[m[K0[1;98H[7m4[23;14H[m[K0[1;98H[7m5[23;15H[m[K1[1;98H[7m6[23;16H[m[K[1;98H[7m5[23;15H[m[K2[1;98H[7m6[23;16H[m[K[H[7m^K[23;16H[m[14B[?2004l
-File mydb.ldif saved
-[?2004hroot@burgosguerra:~# ldapadd -x -D cn=admin,dc=burgosguerra,dc=com -W -f mydb.ldif
-[?2004lEnter LDAP Password: 
-adding new entry "ou=People,dc=burgosguerra,dc=com"
-
-adding new entry "ou=Groups,dc=burgosguerra,dc=com"
-
-adding new entry "cn=admins,ou=Groups,dc=burgosguerra,dc=com"
-
-adding new entry "cn=teachers,ou=Groups,dc=burgosguerra,dc=com"
-
-adding new entry "cn=students,ou=Groups,dc=burgosguerra,dc=com"
-
-[?2004hroot@burgosguerra:~# exit
-[?2004llogout
-[?2004hsysadmin@burgosguerra:~$ sudo mount -t cb[K[Kxboc [K[K[K[K[Kvboxsf Shaerd[K[K[Kred /mnt/shared
-[?2004l[?2004hsysadmin@burgosguerra:~$ cp lda[K[K[K/mnt/shared/ldap_user_management.txt u[K~/useradd.sh 
-[?2004l[?2004hsysadmin@burgosguerra:~$ dos2unix useradd.sh
-[?2004ldos2unix: converting file useradd.sh to Unix format...
-[?2004hsysadmin@burgosguerra:~$ chmod +x useradd.sh
-[?2004l[?2004hsysadmin@burgosguerra:~$ ./useraddd.[K[K.sg[Kh
-[?2004lLDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 3
-Enter new username: Mariah
-Enter user type (admins, teachers, students): students
-Enter a password for the new user: 
-Directory /home/wildcatsUsers/students/Mariah does not exist. Creating...
-adding new entry "uid=Mariah,ou=People,dc=burgosguerra,dc=com"
-
-User Mariah created successfully with UID: 3006 and GID: 5002.
-User created.
-LDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 5
-Exiting...
-[?2004hsysadmin@burgosguerra:~$ ldapsee[Karch -x -D "cn=admn[Kin,dc=burgosguerra,dc=com" -w "BUrgos[K[K[K[K[KurgosGuerra" -b "dc =burgosguerra,dc=com" (uid[K[K[K[K"(uid+[K=Mariah"[K)" s[KuserPassword
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <dc=burgosguerra,dc=com> with scope subtree
-# filter: (uid=Mariah)
-# requesting: userPassword 
-#
-
-# Mariah, People, burgosguerra.com
-dn: uid=Mariah,ou=People,dc=burgosguerra,dc=com
-userPassword:: Y2hhcmFjdGVyOCAgIyBVc2UgdGhlIHByb3ZpZGVkIHBhc3N3b3Jk
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 2
-# numEntries: 1
-[?2004hsysadmin@burgosguerra:~$ ldapseea[K[Karch -x -b "dc=burgosguerra,dc=com" "(objectClass=pso[K[Kosic[KxAccount)"
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <dc=burgosguerra,dc=com> with scope subtree
-# filter: (objectClass=posixAccount)
-# requesting: ALL
-#
-
-# admin01, Admins, burgosguerra.com
-dn: uid=admin01,ou=Admins,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: admin01
-sn: Admin
-givenName: System
-cn: System Admin
-uidNumber: 1001
-gidNumber: 1001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsers/admins/admin01
-
-# teacher01, Teachers, burgosguerra.com
-dn: uid=teacher01,ou=Teachers,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: teacher01
-sn: Teacher
-givenName: John
-cn: John Teacher
-uidNumber: 2001
-gidNumber: 2001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsers/teachers/teacher01
-
-# student01, Students, burgosguerra.com
-dn: uid=student01,ou=Students,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: student01
-sn: Student
-givenName: Jane
-cn: Jane Student
-uidNumber: 3001
-gidNumber: 3001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsrs/students/student01
-
-# Adam, burgosguerra.com
-dn: uid=Adam,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Adam
-sn: Adam
-uid: Adam
-uidNumber: 3002
-gidNumber: 1001
-homeDirectory: /home/wildcatsUsers/admins/Adam
-loginShell: /bin/bash
-
-# Luis, burgosguerra.com
-dn: uid=Luis,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Luis
-sn: Luis
-uid: Luis
-uidNumber: 3003
-gidNumber: 3001
-homeDirectory: /home/wildcatsUsers/students/Luis
-loginShell: /bin/bash
-
-# Ubuntu, burgosguerra.com
-dn: uid=Ubuntu,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Ubuntu
-sn: Ubuntu
-uid: Ubuntu
-uidNumber: 3004
-gidNumber: 2001
-homeDirectory: /home/wildcatsUsers/teachers/Ubuntu
-loginShell: /bin/bash
-
-# Joe, burgosguerra.com
-dn: uid=Joe,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Joe
-sn: Joe
-uid: Joe
-uidNumber: 3005
-gidNumber: 3001
-homeDirectory: /home/wildcatsUsers/students/Joe
-loginShell: /bin/bash
-
-# Mariah, People, burgosguerra.com
-dn: uid=Mariah,ou=People,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Mariah
-sn: Mariah
-uid: Mariah
-uidNumber: 3006
-gidNumber: 5002
-homeDirectory: /home/wildcatsUsers/students/Mariah
-loginShell: /bin/bash
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 9
-# numEntries: 8
-[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "dc=burgosguerra,dc=com" "(objectClass=posixAccount)"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CD "cn=admin,dc=burgosguerra,dc=com" -w "BurgosGuerra" -b "dc=burgosguerra,dc=com" "(uid=Mariah)" userPassword[A[5Pb "dc=burgosguerra,dc=com" "(objectClass=posixAccount)"
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CD "cn=admin,dc=burgosguerra,dc=com" -w "BurgosGuerra" -b "dc=burgosguerra,dc=com" "(uid=Mariah)" userPassword[A[5Pb "dc=burgosguerra,dc=com" "(objectClass=posixAccount)"
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <dc=burgosguerra,dc=com> with scope subtree
-# filter: (objectClass=posixAccount)
-# requesting: ALL
-#
-
-# admin01, Admins, burgosguerra.com
-dn: uid=admin01,ou=Admins,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: admin01
-sn: Admin
-givenName: System
-cn: System Admin
-uidNumber: 1001
-gidNumber: 1001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsers/admins/admin01
-
-# teacher01, Teachers, burgosguerra.com
-dn: uid=teacher01,ou=Teachers,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: teacher01
-sn: Teacher
-givenName: John
-cn: John Teacher
-uidNumber: 2001
-gidNumber: 2001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsers/teachers/teacher01
-
-# student01, Students, burgosguerra.com
-dn: uid=student01,ou=Students,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: student01
-sn: Student
-givenName: Jane
-cn: Jane Student
-uidNumber: 3001
-gidNumber: 3001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsrs/students/student01
-
-# Adam, burgosguerra.com
-dn: uid=Adam,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Adam
-sn: Adam
-uid: Adam
-uidNumber: 3002
-gidNumber: 1001
-homeDirectory: /home/wildcatsUsers/admins/Adam
-loginShell: /bin/bash
-
-# Luis, burgosguerra.com
-dn: uid=Luis,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Luis
-sn: Luis
-uid: Luis
-uidNumber: 3003
-gidNumber: 3001
-homeDirectory: /home/wildcatsUsers/students/Luis
-loginShell: /bin/bash
-
-# Ubuntu, burgosguerra.com
-dn: uid=Ubuntu,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Ubuntu
-sn: Ubuntu
-uid: Ubuntu
-uidNumber: 3004
-gidNumber: 2001
-homeDirectory: /home/wildcatsUsers/teachers/Ubuntu
-loginShell: /bin/bash
-
-# Joe, burgosguerra.com
-dn: uid=Joe,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Joe
-sn: Joe
-uid: Joe
-uidNumber: 3005
-gidNumber: 3001
-homeDirectory: /home/wildcatsUsers/students/Joe
-loginShell: /bin/bash
-
-# Mariah, People, burgosguerra.com
-dn: uid=Mariah,ou=People,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Mariah
-sn: Mariah
-uid: Mariah
-uidNumber: 3006
-gidNumber: 5002
-homeDirectory: /home/wildcatsUsers/students/Mariah
-loginShell: /bin/bash
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 9
-# numEntries: 8
-[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "dc=burgosguerra,dc=com" "(objectClass=posixAccount)"ld[K[Kldap[K[K[K[K[1@o[1@u[1@=[1@Grdc=burgosguerra,dc=com" "(objectClass=posixAccount)" [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Codc=burgosguerra,dc=com" "(objectClass=posixAccount)"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cudc=burgosguerra,dc=com" "(objectClass=posixAccount)"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpdc=burgosguerra,dc=com" "(objectClass=posixAccount)"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csdc=burgosguerra,dc=com" "(objectClass=posixAccount)"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C,dc=burgosguerra,dc=com" "(objectClass=posixAccount)"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C+dc=burgosguerra,dc=com" "(objectClass=posixAccount)"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C+dc=burgosguerra,dc=com" "(objectClass=posixAccount)"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdc=burgosguerra,dc=com" "(objectClass=posixAcco[1Punt)"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdc=burgosguerra,dc=com" "(objectClass=posixAccou[1Pnt)"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CAccoun[1Pt)"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cccount[1P)"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Count)[1P"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Count)"[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cunt)" [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pnt)"
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pt)"[1P)"s)"[1P)"x)"G)"r)" [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co)"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cu)"p)"s)"
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <ou=Groups,dc=burgosguerra,dc=com> with scope subtree
-# filter: (objectClass=posixGroups)
-# requesting: ALL
-#
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 1
-[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "ou=Groups,dc=burgosguerra,dc=com" "(objectClass=posixGroups)"[1P)"
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <ou=Groups,dc=burgosguerra,dc=com> with scope subtree
-# filter: (objectClass=posixGroup)
-# requesting: ALL
-#
-
-# admins, Groups, burgosguerra.com
-dn: cn=admins,ou=Groups,dc=burgosguerra,dc=com
-objectClass: posixGroup
-cn: admins
-gidNumber: 5000
-
-# teachers, Groups, burgosguerra.com
-dn: cn=teachers,ou=Groups,dc=burgosguerra,dc=com
-objectClass: posixGroup
-cn: teachers
-gidNumber: 5001
-
-# students, Groups, burgosguerra.com
-dn: cn=students,ou=Groups,dc=burgosguerra,dc=com
-objectClass: posixGroup
-cn: students
-gidNumber: 5002
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 4
-# numEntries: 3
-[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "ou=Groups,dc=burgosguerra,dc=com" "(objectClass=posixGroup)"[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KgidNumber=5002)"
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <ou=Groups,dc=burgosguerra,dc=com> with scope subtree
-# filter: (gidNumber=5002)
-# requesting: ALL
-#
-
-# students, Groups, burgosguerra.com
-dn: cn=students,ou=Groups,dc=burgosguerra,dc=com
-objectClass: posixGroup
-cn: students
-gidNumber: 5002
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 2
-# numEntries: 1
-[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "ou=Groups,dc=burgosguerra,dc=com" "(gidNumber=5002)" memb er
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <ou=Groups,dc=burgosguerra,dc=com> with scope subtree
-# filter: (gidNumber=5002)
-# requesting: member 
-#
-
-# students, Groups, burgosguerra.com
-dn: cn=students,ou=Groups,dc=burgosguerra,dc=com
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 2
-# numEntries: 1
-[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "ou=Groups,dc=burgosguerra,dc=com" "(gidNumber=5002)" member[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <ou=Groups,dc=burgosguerra,dc=com> with scope subtree
-# filter: (gidNumber=5002)
-# requesting: ALL
-#
-
-# students, Groups, burgosguerra.com
-dn: cn=students,ou=Groups,dc=burgosguerra,dc=com
-objectClass: posixGroup
-cn: students
-gidNumber: 5002
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 2
-# numEntries: 1
-[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "ou=Groups,dc=burgosguerra,dc=com" "(gidNumber=5002)"[1P[1P[1P[1P[1P[1P[1@U[1@s[1@e[1@r[1@s
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <ou=Users,dc=burgosguerra,dc=com> with scope subtree
-# filter: (gidNumber=5002)
-# requesting: ALL
-#
-
-# search result
-search: 2
-result: 32 No such object
-matchedDN: dc=burgosguerra,dc=com
-
-# numResponses: 1
-[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "ou=Users,dc=burgosguerra,dc=com" "(gidNumber=5002)"[1P[1P[1P[1P[1P[1@P[1@e[1@o[1@p[1@l[1@e
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <ou=People,dc=burgosguerra,dc=com> with scope subtree
-# filter: (gidNumber=5002)
-# requesting: ALL
-#
-
-# Mariah, People, burgosguerra.com
-dn: uid=Mariah,ou=People,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Mariah
-sn: Mariah
-uid: Mariah
-uidNumber: 3006
-gidNumber: 5002
-homeDirectory: /home/wildcatsUsers/students/Mariah
-loginShell: /bin/bash
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 2
-# numEntries: 1
-[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "ou=People,dc=burgosguerra,dc=com" "(gidNumber=5002)"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1PUsers[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@Group[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C member[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CobjectClass=posixGroup)"s)"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5Pdc=burgosguerra,dc=com" "(objectClass=posixAccount)"
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CD "cn=admin,dc=burgosguerra,dc=com" -w "BurgosGuerra" -b "dc=burgosguerra,dc=com" "(uid=Mariah)" userPassword
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <dc=burgosguerra,dc=com> with scope subtree
-# filter: (uid=Mariah)
-# requesting: userPassword 
-#
-
-# Mariah, People, burgosguerra.com
-dn: uid=Mariah,ou=People,dc=burgosguerra,dc=com
-userPassword:: Y2hhcmFjdGVyOCAgIyBVc2UgdGhlIHByb3ZpZGVkIHBhc3N3b3Jk
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 2
-# numEntries: 1
-[?2004hsysadmin@burgosguerra:~$ echo "Y2hhcmFjx[KdF[KGVyOCAgIyBVc2UgdhG[K[KGhlIHByb3ZpZGVkIHBhc3N3b#Jk[K[K[K3Jk" | base64 --deco de
-[?2004lcharacter8  # Use the provided password[?2004hsysadmin@burgosguerra:~$ 
-[?2004l[?2004hsysadmin@burgosguerra:~$ slappasswd -h {MD5}
-[?2004lNew password: 
-Re-enter new password: 
-{MD5}+eHVPT2HDKElDAOdM7hdmw==
-[?2004hsysadmin@burgosguerra:~$ dn:[K[K[Kjoe[K[K[Ksudo joe change_mariah_passwrd[K[Kord.ldif
-[?2004l[sudo] password for sysadmin: 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[H[J[?2004h[m[1;37r[H[7m    IW   change_mariah_password.ldif                                               Row 1    Col 1   
-[m[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K[7m Joe's Own Editor 4.6 (utf-8) ** Type [1mCtrl-K Q[m[7m to exit or [1mCtrl-K H[m[7m for help **[m[K[H
-New File[K[A[7m^[
-[A[2C[
-[A[3C3 IW   change_mariah_password.ldif
-[A    IW   change_mariah_password.ldif 
-[m[K[35B[K[H
-[A[7m^[
-[A[2C[
-[A[3C3 IW   change_mariah_password.ldif
-[A    IW   change_mariah_password.ldif 
-[ma[1;38H[7m(Modified)[49C2
-[C[m[Kd[1;97H[7m3
-[2C[m[Kw[1;97H[7m4
-[3C[m[K[1;97H[7m3
-[2C[m[K[1;97H[7m2
-[C[m[K[1;97H[7m1
-[m[Kd[1;97H[7m2
-[C[m[Kn[1;97H[7m3
-[2C[m[K:[1;97H[7m4
-[3C[m[K [1;97H[7m5[5G
-[m[Ku[1;97H[7m6[6G
-[m[Ki[1;97H[7m7[7G
-[m[Kd[1;97H[7m8[8G
-[m[K+[1;97H[7m9[9G
-[m[K[1;97H[7m8[8G
-[m[K=[1;97H[7m9[9G
-[m[KM[1;97H[7m10
-[89D[m[Ka[1;98H[7m1
-[88D[m[Kr[1;98H[7m2
-[87D[m[Ki[1;98H[7m3
-[86D[m[Ka[1;98H[7m4
-[85D[m[Kh[1;98H[7m5
-[84D[m[K,[1;98H[7m6
-[83D[m[Ko[1;98H[7m7
-[82D[m[Ku[1;98H[7m8
-[81D[m[K=[1;98H[7m9
-[80D[m[KP[1;97H[7m20
-[79D[m[Ke[1;98H[7m1
-[78D[m[Ko[1;98H[7m2
-[77D[m[Kp[1;98H[7m3
-[76D[m[Kl[1;98H[7m4
-[75D[m[Ke[1;98H[7m5
-[74D[m[K,[1;98H[7m6
-[73D[m[Kd[1;98H[7m7
-[72D[m[Kc[1;98H[7m8
-[71D[m[K=[1;98H[7m9
-[70D[m[Kb[1;97H[7m30
-[69D[m[Ku[1;98H[7m1
-[68D[m[Kr[1;98H[7m2
-[67D[m[Kg[1;98H[7m3
-[66D[m[Ko[1;98H[7m4
-[65D[m[Ks[1;98H[7m5
-[64D[m[Kg[1;98H[7m6
-[63D[m[Ku[1;98H[7m7
-[62D[m[Ke[1;98H[7m8
-[61D[m[Kr[1;98H[7m9
-[60D[m[Kr[1;97H[7m40
-[59D[m[Ka[1;98H[7m1
-[58D[m[K,[1;98H[7m2
-[57D[m[Kd[1;98H[7m3
-[56D[m[Kc[1;98H[7m4
-[55D[m[K=[1;98H[7m5
-[54D[m[Ko[1;98H[7m6
-[53D[m[Km[1;98H[7m7
-[52D[m[K[1;98H[7m6
-[53D[m[K[1;98H[7m5
-[54D[m[Kc[1;98H[7m6
-[53D[m[Ko[1;98H[7m7
-[52D[m[Km[1;98H[7m8
-[51D[m[K[1;88H[7m2[8C1 
-
-[mc[1;97H[7m2
-
-[C[m[Kh[1;97H[7m3
-
-[2C[m[Ka[1;97H[7m4[3;4H[m[Kn[1;97H[7m5[3;5H[m[Kg[1;97H[7m6[3;6H[m[Ke[1;97H[7m7[3;7H[m[Kt[1;97H[7m8[3;8H[m[Ky[1;97H[7m9[3;9H[m[Ko[1;97H[7m10
-
-[89D[m[Ke[1;98H[7m1
-
-[88D[m[K:[1;98H[7m2
-
-[87D[m[K[1;98H[7m1
-
-[88D[m[K[1;98H[7m0
-
-[89D[m[K[1;97H[7m9 [3;9H[m[Kp[1;97H[7m10
-
-[89D[m[Ke[1;98H[7m1
-
-[88D[m[K:[1;98H[7m2
-
-[87D[m[K [1;98H[7m3
-
-[86D[m[Km[1;98H[7m4
-
-[85D[m[Ko[1;98H[7m5
-
-[84D[m[Kd[1;98H[7m6
-
-[83D[m[Ki[1;98H[7m7
-
-[82D[m[Kf[1;98H[7m8
-
-[81D[m[Ky[1;98H[7m9
-
-[80D[m[K[1;88H[7m3[9C 
-
-
-[mr[1;97H[7m2
-
-
-[C[m[Ke[1;97H[7m3[4;3H[m[Kp[1;97H[7m4[4;4H[m[Kl[1;97H[7m5[4;5H[m[Ka[1;97H[7m6[4;6H[m[Kc[1;97H[7m7[4;7H[m[Ke[1;97H[7m8[4;8H[m[K:[1;97H[7m9[4;9H[m[Ku[1;97H[7m10[4;10H[m[K[1;97H[7m9 [4;9H[m[K [1;97H[7m10[4;10H[m[Ku[1;98H[7m1[4;11H[m[Ks[1;98H[7m2[4;12H[m[Ke[1;98H[7m3[4;13H[m[Kr[1;98H[7m4[4;14H[m[KP[1;98H[7m5[4;15H[m[Ka[1;98H[7m6[4;16H[m[Ks[1;98H[7m7[4;17H[m[Ks[1;98H[7m8[4;18H[m[Kw[1;98H[7m9[4;19H[m[Ko[1;97H[7m20[4;20H[m[Kr[1;98H[7m1[4;21H[m[Kd[1;98H[7m2[4;22H[m[K[1;88H[7m4[8C1 
-
-
-
-[mu[1;97H[7m2[5;2H[m[Ks[1;97H[7m3[5;3H[m[Ke[1;97H[7m4[5;4H[m[Kr[1;97H[7m5[5;5H[m[KP[1;97H[7m6[5;6H[m[Ka[1;97H[7m7[5;7H[m[Ks[1;97H[7m8[5;8H[m[Ks[1;97H[7m9[5;9H[m[Kw[1;97H[7m10[5;10H[m[Ko[1;98H[7m1[5;11H[m[Kr[1;98H[7m2[5;12H[m[Kd[1;98H[7m3[5;13H[m[K:[1;98H[7m4[5;14H[m[K [1;98H[7m5[5;15H[m[K{[1;98H[7m6[5;16H[m[KM[1;98H[7m7[5;17H[m[KD[1;98H[7m8[5;18H[m[K5[1;98H[7m9[5;19H[m[K}[1;97H[7m20[5;20H[m[K[H[7m^K[5;20H[m[32B[?2004l
-File change_mariah_password.ldif saved
-[?2004hsysadmin@burgosguerra:~$ sudo joe change_mariah_password.ldif[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Plappasswd -h {MD5}
-[?2004lNew password: 
-Re-enter new password: 
-{MD5}+eHVPT2HDKElDAOdM7hdmw==
-[?2004hsysadmin@burgosguerra:~$ slappasswd -h {MD5}udo joe change_mariah_password.ldif
-[?2004l
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[H[J[?2004h[m[1;37r[H[7m    IW   change_mariah_password.ldif                                               Row 4    Col 1   
-
-
-
-[muserPassword: {MD5}[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K[H
-dn: uid=Mariah,ou=People,dc=burgosguerra,dc=com[K
-changetype: modify[K
-replace: userPassword[K[33B[7m Joe's Own Editor 4.6 (utf-8) ** Type [1mCtrl-K Q[m[7m to exit or [1mCtrl-K H[m[7m for help **[m[K[5d[H[7m^[
-
-
-
-[H[2C[
-
-
-
-[H   [93C2[36B[m[K[5d[C[H[7m^[
-
-
-
-[4A[C[
-
-
-
-[H   [93C3[5;3H[H^[
-
-
-
-[4A[
-
-
-
-[H   [93C4[5;4H[H^[
-
-
-
-[C[4A[
-
-
-
-[H   [93C5[5;5H[H^[
-
-
-
-[2C[H[2C[
-
-
-
-[C[H   [93C6[5;6H[H^[[5;6H[H[2C[
-
-
-
-[2C[H   [93C7[5;7H[H^[[5;7H[H[2C[[5;7H[H   [93C8[5;8H[H^[[5;8H[H[2C[[5;8H[H   [93C9[5;9H[H^[[5;9H[H[2C[[5;9H[H   [93C10[5;10H[H^[[5;10H[H[2C[[5;10H[H   [94C1[5;11H[H^[[5;11H[H[2C[[5;11H[H   [94C2[5;12H[H^[[5;12H[H[2C[[5;12H[H   [94C3[5;13H[H^[[5;13H[H[2C[[5;13H[H   [94C4[5;14H[H^[[5;14H[H[2C[[5;14H[H   [94C5[5;15H[H^[[5;15H[H[2C[[5;15H[H   [94C6[5;16H[H^[[5;16H[H[2C[[5;16H[H   [94C7[5;17H[H^[[5;17H[H[2C[[5;17H[H   [94C8[5;18H[H^[[5;18H[H[2C[[5;18H[H   [94C9[5;19H[H^[[5;19H[H[2C[[5;19H[H   [93C20[5;20H[H^[[5;20H[H[2C[[5;20H[H   [5;20H[m+[1;38H[7m(Modified)[50C1[5;21H[m[Ke[1;98H[7m2[5;22H[m[KH[1;98H[7m3[5;23H[m[KV[1;98H[7m4[5;24H[m[KP[1;98H[7m5[5;25H[m[KT[1;98H[7m6[5;26H[m[K2[1;98H[7m7[5;27H[m[KH[1;98H[7m8[5;28H[m[KD[1;98H[7m9[5;29H[m[KK[1;97H[7m30[5;30H[m[KE[1;98H[7m1[5;31H[m[Kl[1;98H[7m2[5;32H[m[KD[1;98H[7m3[5;33H[m[KA[1;98H[7m4[5;34H[m[KO[1;98H[7m5[5;35H[m[Kd[1;98H[7m6[5;36H[m[KM[1;98H[7m7[5;37H[m[K7[1;98H[7m8[5;38H[m[Kh[1;98H[7m9[5;39H[m[Kd[1;97H[7m40[5;40H[m[Km[1;98H[7m1[5;41H[m[Kw[1;98H[7m2[5;42H[m[K=[1;98H[7m3[5;43H[m[K=[1;98H[7m4[5;44H[m[K[H[7m^K[5;44H[m[32B[?2004l
-File change_mariah_password.ldif saved
-[?2004hsysadmin@burgosguerra:~$ ldapmodify -x -D "cn=admin,dc=burgosguerra,dc=com" -W -f change_mara[Kiah_pass word.ldif
-[?2004lEnter LDAP Password: 
-modifying entry "uid=Mariah,ou=People,dc=burgosguerra,dc=com"
-
-[?2004hsysadmin@burgosguerra:~$ ldapmodify -x -D "cn=admin,dc=burgosguerra,dc=com" -W -f change_mariah_password.ldif[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[39Psudo joe change_mariah_password.ldif
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Plappasswd -h {MD5}
-[?2004lNew password: 
-Re-enter new password: 
-{MD5}+eHVPT2HDKElDAOdM7hdmw==
-[?2004hsysadmin@burgosguerra:~$ slappasswd -h {MD5}ldapmodify -x -D "cn=admin,dc=burgosguerra,dc=com" -W -f change_mariah_password.ldif[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[39Psudo joe change_mariah_password.ldif
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-[?2004l
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[H[J[?2004h[m[1;37r[H[7m    IW   change_mariah_password.ldif                                               Row 4    Col 1   
-
-
-
-[muserPassword: {MD5}+eHVPT2HDKElDAOdM7hdmw==[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K[H
-dn: uid=Mariah,ou=People,dc=burgosguerra,dc=com[K
-changetype: modify[K
-replace: userPassword[K[33B[7m Joe's Own Editor 4.6 (utf-8) ** Type [1mCtrl-K Q[m[7m to exit or [1mCtrl-K H[m[7m for help **[m[K[5dc[1;38H[7m(Modified)[49C2[5;2H[muserPassword: {MD5}+eHVPT2HDKElDAOdM7hdmw==[K[32B[K[5d[Ch[1;97H[7m3[5;3H[muserPassword: {MD5}+eHVPT2HDKElDAOdM7hdmw==[K[2Ca[1;97H[7m4[5;4H[muserPassword: {MD5}+eHVPT2HDKElDAOdM7hdmw==[K[3Cr[1;97H[7m5[5;5H[muserPassword: {MD5}+eHVPT2HDKElDAOdM7hdmw==[K[5G[1;97H[7m4[5;4H[muserPassword: {MD5}+eHVPT2HDKElDAOdM7hdmw==[K[3C[1;97H[7m3[5;3H[muserPassword: {MD5}+eHVPT2HDKElDAOdM7hdmw==[K[2C[1;97H[7m2[5;2H[muserPassword: {MD5}+eHVPT2HDKElDAOdM7hdmw==[K[C[1;97H[7m1
-
-
-
-[muserPassword: {MD5}+eHVPT2HDKElDAOdM7hdmw==[K[H[7m^K
-
-
-
-[m[32B[?2004l
-File change_mariah_password.ldif saved
-[?2004hsysadmin@burgosguerra:~$ sudo joe change_mariah_password.ldif[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Plappasswd -h {MD5}ldapmodify -x -D "cn=admin,dc=burgosguerra,dc=com" -W -f change_mariah_password.ldif[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[39Psudo joe change_mariah_password.ldif
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Plappasswd -h {MD5}udo joe change_mariah_password.ldif[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Plappasswd -h {MD5}echo "Y2hhcmFjdGVyOCAgIyBVc2UgdGhlIHByb3ZpZGVkIHBhc3N3b3Jk" | base64 --decode[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cldapsearch -x -D "cn=admin,dc=burgosguerra,dc=com" -w "BurgosGuerra" -b "dc=burgosguerra,dc=com" "(uid=Mariah)" userPassword
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <dc=burgosguerra,dc=com> with scope subtree
-# filter: (uid=Mariah)
-# requesting: userPassword 
-#
-
-# Mariah, People, burgosguerra.com
-dn: uid=Mariah,ou=People,dc=burgosguerra,dc=com
-userPassword:: e01ENX0rZUhWUFQySERLRWxEQU9kTTdoZG13PT0=
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 2
-# numEntries: 1
-[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -D "cn=admin,dc=burgosguerra,dc=com" -w "BurgosGuerra" -b "dc=burgosguerra,dc=com" "(uid=Mariah)" userPassword[A[39Psudo joe change_mariah_password.ldif
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Plappasswd -h {MD5}ldapmodify -x -D "cn=admin,dc=burgosguerra,dc=com" -W -f change_mariah_password.ldif[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[39Psudo joe change_mariah_password.ldif
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[
