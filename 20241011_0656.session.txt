@@ -1,543 +1,0 @@
-Script started on 2024-10-11 06:56:28+00:00 [TERM="linux" TTY="/dev/tty1" COLUMNS="100" LINES="37"]
-[?2004hsysadmin@burgosguerra:~$ ./useradd.sh
-[?2004lLDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 2 3
-Enter new username: D Luis
-Enter user type (admins, teachers, students): std udents
-Enter a password for the new user: 
-Directory /home/wildcatsUsers/students/Luis does not exist. Creating...
-[sudo] password for sysadmin: 
-adding new entry "uid=Luis,dc=burgosguerra,dc=com"
-ldap_add: Invalid syntax (21)
-	additional info: gidNumber: value #0 invalid per syntax
-
-Error: Failed to create user Luis in LDAP.
-User created.
-LDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: ^[[A^[[B        3
-Enter new username: Li uis
-Enter user type (admins, teachers, students): students
-Enter a password for the new user: 
-adding new entry "uid=Luis,dc=burgosguerra,dc=com"
-ldap_add: Invalid syntax (21)
-	additional info: gidNumber: value #0 invalid per syntax
-
-Error: Failed to create user Luis in LDAP.
-User created.
-LDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 3
-Enter new username: Christian
-Enter user type (admins, teachers, students): teace hers
-Enter a password for the new user: 
-Directory /home/wildcatsUsers/teachers/Christian does not exist. Creating...
-adding new entry "uid=Christian,dc=burgosguerra,dc=com"
-ldap_add: Invalid syntax (21)
-	additional info: gidNumber: value #0 invalid per syntax
-
-Error: Failed to create user Christian in LDAP.
-User created.
-LDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 5
-Exiting...
-[?2004hsysadmin@burgosguerra:~$ ldpa[K[Kap[K[K[K[K/h[K[Kls /home/wildcatsUsers/teachers/
-[?2004l[0m[01;34mChristian[0m  [01;34mJaneteacher[0m
-[?2004hsysadmin@burgosguerra:~$ group Chur[K[Kristian
-[?2004lCommand 'group' not found, did you mean:
-  command 'groups' from deb coreutils (8.32-4.1ubuntu1.2)
-  command 'grop' from deb grop (2:0.10-1.2)
-Try: sudo apt install <deb name>
-[?2004hsysadmin@burgosguerra:~$ group Christians Christian
-[?2004lgroups: ‘Christian’: no such user
-[?2004hsysadmin@burgosguerra:~$ s[Kcpt[K[K[Ksudo mount c[Kvboxsf[K[K[K[K[K[K-t vboxsf Shared /mnt/shae[Kred
-[?2004l[?2004hsysadmin@burgosguerra:~$ cp /mnt/shared/ldap_user_management.txt scc[K[K[Kusera[K[K[K[K[K[K ~/h[Kuseradd.sh
-[?2004l[?2004hsysadmin@burgosguerra:~$ dos2[K[K[K[Kdos2unix useradd.sh
-[?2004ldos2unix: converting file useradd.sh to Unix format...
-[?2004hsysadmin@burgosguerra:~$ chmod +x useradd.sh
-[?2004l[?2004hsysadmin@burgosguerra:~$ a[K./is[K[Kuseradd
-[?2004lbash: ./useradd: No such file or directory
-[?2004hsysadmin@burgosguerra:~$ ./useradd.sh
-[?2004lGroup admins already exists.
-Group teachers does not exist. Creating...
-groupadd: GID '1000' already exists
-Created group teachers with GID: 1000
-Group students does not exist. Creating...
-groupadd: GID '1000' already exists
-Created group students with GID: 1000
-LDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 3 5
-Exiting...
-[?2004hsysadmin@burgosguerra:~$ getent group | grep -E "admins|teachers|students"
-[?2004l[01;31m[Kadmins[m[K:x:1001:
-[?2004hsysadmin@burgosguerra:~$ getent group | grep -E "admins|teachers|students"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[K[Kchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh
-[?2004l[?2004hsysadmin@burgosguerra:~$ cp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[3Pgetent group | grep -E "admins|teachers|students"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[K[Kchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[C
-[?2004ldos2unix: converting file useradd.sh to Unix format...
-[?2004hsysadmin@burgosguerra:~$ dos2unix useradd.shcp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[3Pgetent group | grep -E "admins|teachers|students"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[K[Kchmod +x useradd.sh
-[?2004l[?2004hsysadmin@burgosguerra:~$ chmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[3Pgetent group | grep -E "admins|teachers|students"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[K
-[?2004lGroup admins already exists.
-Group teachers does not exist. Creating...
-Created group teachers with GID: 65535
-Group students does not exist. Creating...
-Created group students with GID: 65536
-LDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 3
-Enter new username: Luis
-Enter user type (admins, teachers, students): std udents
-Enter a password for the new user: 
-Group admins already exists.
-Group teachers already exists.
-Group students already exists.
-./useradd.sh: line 135: get_next_gid: command not found
-adding new entry "uid=Luis,dc=burgosguerra,dc=com"
-ldap_add: Invalid syntax (21)
-	additional info: gidNumber: value #0 invalid per syntax
-
-Error: Failed to create user Luis in LDAP.
-User created.
-LDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 5
-Exiting...
-[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "dc=burgosguerra"[K,dc=com" "(objectClass=posicA[K[KxAccount)"
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <dc=burgosguerra,dc=com> with scope subtree
-# filter: (objectClass=posixAccount)
-# requesting: ALL
-#
-
-# admin01, Admins, burgosguerra.com
-dn: uid=admin01,ou=Admins,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: admin01
-sn: Admin
-givenName: System
-cn: System Admin
-uidNumber: 1001
-gidNumber: 1001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsers/admins/admin01
-
-# teacher01, Teachers, burgosguerra.com
-dn: uid=teacher01,ou=Teachers,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: teacher01
-sn: Teacher
-givenName: John
-cn: John Teacher
-uidNumber: 2001
-gidNumber: 2001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsers/teachers/teacher01
-
-# student01, Students, burgosguerra.com
-dn: uid=student01,ou=Students,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: student01
-sn: Student
-givenName: Jane
-cn: Jane Student
-uidNumber: 3001
-gidNumber: 3001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsrs/students/student01
-
-# Adam, burgosguerra.com
-dn: uid=Adam,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Adam
-sn: Adam
-uid: Adam
-uidNumber: 3002
-gidNumber: 1001
-homeDirectory: /home/wildcatsUsers/admins/Adam
-loginShell: /bin/bash
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 5
-# numEntries: 4
-[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "dc=burgosguerra,dc=com" "(objectClass=posixAccount)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"s)"n)"=)"e)"[1P)"T)"e)"a)"c)"h)"e)"r)"
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <dc=burgosguerra,dc=com> with scope subtree
-# filter: (sn=Teacher)
-# requesting: ALL
-#
-
-# teacher01, Teachers, burgosguerra.com
-dn: uid=teacher01,ou=Teachers,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: teacher01
-sn: Teacher
-givenName: John
-cn: John Teacher
-uidNumber: 2001
-gidNumber: 2001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsers/teachers/teacher01
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 2
-# numEntries: 1
-[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "dc=burgosguerra,dc=com" "(sn=Teacher)"objectClass=posixAccount)"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Kchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh
-[?2004l[?2004hsysadmin@burgosguerra:~$ cp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cldapsearch -x -b "dc=burgosguerra,dc=com" "(sn=Teacher)"objectClass=posixAccount)"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Kchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[C
-[?2004ldos2unix: converting file useradd.sh to Unix format...
-[?2004hsysadmin@burgosguerra:~$ dos2unix useradd.shcp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cldapsearch -x -b "dc=burgosguerra,dc=com" "(sn=Teacher)"objectClass=posixAccount)"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Kchmod +x useradd.sh
-[?2004l[?2004hsysadmin@burgosguerra:~$ chmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cldapsearch -x -b "dc=burgosguerra,dc=com" "(sn=Teacher)"objectClass=posixAccount)"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[K
-[?2004lGroup admins already exists.
-Group teachers already exists.
-Group students already exists.
-LDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 3
-Enter new username: Luis
-Enter user type (admins, teachers, students): students
-Enter a password for the new user: 
-Group admins already exists.
-Group teachers already exists.
-Group students already exists.
-./useradd.sh: line 140: get_next_gid: command not found
-adding new entry "uid=Luis,dc=burgosguerra,dc=com"
-ldap_add: Invalid syntax (21)
-	additional info: gidNumber: value #0 invalid per syntax
-
-Error: Failed to create user Luis in LDAP.
-User created.
-LDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 5
-Exiting...
-[?2004hsysadmin@burgosguerra:~$ ls /home/wildcatsUsers/students/
-[?2004l[0m[01;34mJastude[0m  [01;34mLuis[0m
-[?2004hsysadmin@burgosguerra:~$ getend[Kt group teachers
-[?2004lteachers:x:65535:
-[?2004hsysadmin@burgosguerra:~$ getent group teachersls /home/wildcatsUsers/students/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[11Pgetent group teachers[K[K[K[K[K[K[K[Kadmins
-[?2004ladmins:x:1001:
-[?2004hsysadmin@burgosguerra:~$ sudo groupdel teachers
-[?2004l[?2004hsysadmin@burgosguerra:~$ sudo groupdel teachers[K[K[K[K[K[K[K[Kstd[Kudents
-[?2004l[?2004hsysadmin@burgosguerra:~$ sudo groupdel studentsteachers[3Pgetent group adminsteachersls /home/wildcatsUsers/students/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20P./useradd.sh
-[?2004lGroup admins already exists.
-Group teachers does not exist. Creating...
-Created group teachers with GID: 2001
-Group students does not exist. Creating...
-Created group students with GID: 3001
-LDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 3
-Enter new username: Luis
-Enter user type (admins, teachers, students): students
-Enter a password for the new user: 
-Group admins already exists.
-Group teachers already exists.
-Group students already exists.
-./useradd.sh: line 140: get_next_gid: command not found
-adding new entry "uid=Luis,dc=burgosguerra,dc=com"
-ldap_add: Invalid syntax (21)
-	additional info: gidNumber: value #0 invalid per syntax
-
-Error: Failed to create user Luis in LDAP.
-User created.
-LDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 5
-Exiting...
-[?2004hsysadmin@burgosguerra:~$ ./useradd.shsudo groupdel studentsteachers[3Pgetent group adminsteachersls /home/wildcatsUsers/students/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20P./useradd.shchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh
-[?2004l[?2004hsysadmin@burgosguerra:~$ cp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Ksudo groupdel studentsteachers[3Pgetent group adminsteachersls /home/wildcatsUsers/students/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20P./useradd.shchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[C
-[?2004ldos2unix: converting file useradd.sh to Unix format...
-[?2004hsysadmin@burgosguerra:~$ dos2unix useradd.shcp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Ksudo groupdel studentsteachers[3Pgetent group adminsteachersls /home/wildcatsUsers/students/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20P./useradd.shchmod +x useradd.sh
-[?2004l[?2004hsysadmin@burgosguerra:~$ chmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Ksudo groupdel studentsteachersstudents[10P./useradd.sh
-[?2004lGroup admins already exists.
-Group teachers already exists.
-Group students already exists.
-./useradd.sh: line 40: check_and_create_directory: command not found
-./useradd.sh: line 41: check_and_create_directory: command not found
-./useradd.sh: line 42: check_and_create_directory: command not found
-LDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 5
-Exiting...
-[?2004hsysadmin@burgosguerra:~$ ./useradd.shchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Kcp /mnt/shared/ldap_user_management.txt ~/useradd.sh
-[?2004l[?2004hsysadmin@burgosguerra:~$ cp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Kchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[33Pdos2unix useradd.sh
-[?2004ldos2unix: converting file useradd.sh to Unix format...
-[?2004hsysadmin@burgosguerra:~$ dos2unix useradd.shcp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Kcp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Kchmod +x useradd.sh
-[?2004l[?2004hsysadmin@burgosguerra:~$ chmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[K
-[?2004lGroup admins already exists.
-Group teachers already exists.
-Group students already exists.
-LDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 3
-Enter new username: Luis
-Enter user type (admins, teachers, students): sty udents
-Group admins already exists.
-Group teachers already exists.
-Group students already exists.
-./useradd.sh: line 110: get_next_uid: command not found
-adding new entry "uid=Luis,dc=burgosguerra,dc=com"
-ldap_add: Invalid syntax (21)
-	additional info: uidNumber: value #0 invalid per syntax
-
-Error: Failed to create user Luis in LDAP.
-LDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 5
-Exiting...
-[?2004hsysadmin@burgosguerra:~$ ./useradd.shchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Kchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Ksudo groupdel studentsteachers[3Pgetent group adminsteachersls /home/wildcatsUsers/students/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20P./useradd.shchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cldapsearch -x -b "dc=burgosguerra,dc=com" "(sn=Teacher)"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Pcp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cldapsearch -x -b "dc=burgosguerra,dc=com" "(sn=Teacher)"
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <dc=burgosguerra,dc=com> with scope subtree
-# filter: (sn=Teacher)
-# requesting: ALL
-#
-
-# teacher01, Teachers, burgosguerra.com
-dn: uid=teacher01,ou=Teachers,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: teacher01
-sn: Teacher
-givenName: John
-cn: John Teacher
-uidNumber: 2001
-gidNumber: 2001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsers/teachers/teacher01
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 2
-# numEntries: 1
-[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "dc=burgosguerra,dc=com" "(sn=Teacher)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"o)"u)"+)"[1P)"=)"A)"d)"m)"i)"n)"s)"
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <dc=burgosguerra,dc=com> with scope subtree
-# filter: (ou=Admins)
-# requesting: ALL
-#
-
-# Admins, burgosguerra.com
-dn: ou=Admins,dc=burgosguerra,dc=com
-objectClass: organizationalUnit
-ou: Admins
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 2
-# numEntries: 1
-[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "dc=burgosguerra,dc=com" "(ou=Admins)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"sn=Teacher)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"A)"D)"m)"i)"n)"[1P)"[1P)"[1P)"[1P)"d)"m)"i)"n)"
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <dc=burgosguerra,dc=com> with scope subtree
-# filter: (sn=Admin)
-# requesting: ALL
-#
-
-# admin01, Admins, burgosguerra.com
-dn: uid=admin01,ou=Admins,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: admin01
-sn: Admin
-givenName: System
-cn: System Admin
-uidNumber: 1001
-gidNumber: 1001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsers/admins/admin01
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 2
-# numEntries: 1
-[?2004hsysadmin@burgosguerra:~$ ldapsearch -x -b "dc=burgosguerra,dc=com" "(sn=Admin)"[5Pou=)"sn=Teacher)"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Kchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh
-[?2004l[?2004hsysadmin@burgosguerra:~$ cp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cldapsearch -x -b "dc=burgosguerra,dc=com" "(sn=Admin)"[5Pou=)"sn=Teacher)"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Kchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[C
-[?2004ldos2unix: converting file useradd.sh to Unix format...
-[?2004hsysadmin@burgosguerra:~$ dos2unix useradd.shcp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cldapsearch -x -b "dc=burgosguerra,dc=com" "(sn=Admin)"[5Pou=)"sn=Teacher)"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Kchmod +x useradd.sh
-[?2004l[?2004hsysadmin@burgosguerra:~$ chmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cldapsearch -x -b "dc=burgosguerra,dc=com" "(sn=Admin)"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pcp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cldapsearch -x -b "dc=burgosguerra,dc=com" "(sn=Admin)"[5Pou=)"sn=Teacher)"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[K
-[?2004lLDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 3
-Enter new username: Luis
-Enter user type (admins, teachers, students): students
-Enter a password for the new user: 
-adding new entry "uid=Luis,dc=burgosguerra,dc=com"
-
-User Luis created successfully with UID: 3003 and GID: 3001.
-User created.
-LDAP User Management
-1. Check if an LDAP user exists
-2. Change the password of an existing LDAP user
-3. Create a new user (admins, teachers, students)
-4. Delete a user
-5. Exit
-Select an option: 5
-Exiting...
-[?2004hsysadmin@burgosguerra:~$ ./useradd.shchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cldapsearch -x -b "dc=burgosguerra,dc=com" "(sn=Admin)"[5Pou=)"sn=Admin)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"[1P)"ou=)"sn=Teacher)"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Kchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Kchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./useradd.sh[Ksudo groupdel studentsteachers[3Pgetent group adminsteachersls /home/wildcatsUsers/students/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20P./useradd.shchmod +x useradd.shdos2uni[C[C[C[C[C[C[C[C[C[C[C[Ccp /mnt/shared/ldap_user_management.txt ~/useradd.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cldapsearch -x -b "dc=burgosguerra,dc=com" "(sn=Teacher)"objectClass=posixAccount)"
-[?2004l# extended LDIF
-#
-# LDAPv3
-# base <dc=burgosguerra,dc=com> with scope subtree
-# filter: (objectClass=posixAccount)
-# requesting: ALL
-#
-
-# admin01, Admins, burgosguerra.com
-dn: uid=admin01,ou=Admins,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: admin01
-sn: Admin
-givenName: System
-cn: System Admin
-uidNumber: 1001
-gidNumber: 1001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsers/admins/admin01
-
-# teacher01, Teachers, burgosguerra.com
-dn: uid=teacher01,ou=Teachers,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: teacher01
-sn: Teacher
-givenName: John
-cn: John Teacher
-uidNumber: 2001
-gidNumber: 2001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsers/teachers/teacher01
-
-# student01, Students, burgosguerra.com
-dn: uid=student01,ou=Students,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: student01
-sn: Student
-givenName: Jane
-cn: Jane Student
-uidNumber: 3001
-gidNumber: 3001
-loginShell: /bin/bash
-homeDirectory: /home/wildcatsUsrs/students/student01
-
-# Adam, burgosguerra.com
-dn: uid=Adam,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Adam
-sn: Adam
-uid: Adam
-uidNumber: 3002
-gidNumber: 1001
-homeDirectory: /home/wildcatsUsers/admins/Adam
-loginShell: /bin/bash
-
-# Luis, burgosguerra.com
-dn: uid=Luis,dc=burgosguerra,dc=com
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: Luis
-sn: Luis
-uid: Luis
-uidNumber: 3003
-gidNumber: 3001
-homeDirectory:
